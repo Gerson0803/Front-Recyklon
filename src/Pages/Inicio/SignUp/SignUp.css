@@ -1,0 +1,78 @@
+html {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+body {
+  margin: 0;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+.Darly {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  flex-wrap: wrap;
+}
+.Supe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 100vh;
+}
+.Blanco {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  background-image: url(./ocg-saving-the-ocean-TD1oGnkpQ0E-unsplash.jpg);
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+  background-position: left; /* Centra la imagen en el contenedor */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Mateo {
+  display: flex;
+  width: 60%;
+  height: 85%;
+  background-color: beige;
+  justify-content: center;
+  align-items: center;
+  border: black solid;
+  border-radius: 30px;
+}
+.Carlos {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+h1{
+  font-size: 30px;
+ 
+}
+.logo-section {
+  text-align: center; /* Centra el texto */
+}
+
+.button-section {
+  margin-top: 20px; /* Agrega un margen superior para separar el botón del texto */
+  text-align: center; /* Centra el botón */
+}
+.decorado {
+  text-decoration: underline;
+  color: orange;
+  text-shadow: 0 0 orange, 0 0 orange, 0 0 orange, 0 0 orange, 0 0 orange, 0 0 orange, 0 0 orange, 0 0 orange, 0 0 orange, 0 0 orange, 0 0 orange, 0 0 orange, 0 0 orange, 0 0 orange, 0 0 orange;
+}

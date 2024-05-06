@@ -1,0 +1,10 @@
+.boton {
+    background-color:#EE8C45;
+    color:white;
+    border: 0px;
+    width: auto;
+    height: auto;
+    border-radius: 3px;
+    margin-right: 10px;
+    /* Agrega más estilos personalizados aquí si es necesario */
+}

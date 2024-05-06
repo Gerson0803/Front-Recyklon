@@ -1,0 +1,107 @@
+/* LoginForm.css */
+
+.loginform-container {
+    /* Estilos para el contenedor principal */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    
+}
+.lines-decoration{
+    position: relative;
+    font-size: 15px;
+}
+.lines-decoration::after,.lines-decoration::before{
+    content:"";
+    position: absolute;
+    width: 20%;
+    height: 1px;
+    background-color:#EE8C45;
+    top: 0.6em;
+}
+.lines-decoration::before{
+    left: 10%;
+}
+.lines-decoration::after{
+    right: 10%;
+}
+.header-section {
+    
+    margin-bottom: 5px;
+}
+
+.greeting-section {
+    width: 100%;
+    height: auto;
+    
+}
+
+.greeting-text {
+    /* Estilos para el texto de saludo */
+   
+}
+
+.google-button-section {
+    /* Estilos para la sección del botón de Google */
+    
+}
+
+.form-section {
+    /* Estilos para la sección del formulario */
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    justify-content: space-evenly;
+}
+
+.input-group {
+    /* Estilos para el grupo de entrada */
+}
+
+.label {
+    /* Estilos para la etiqueta del campo de entrada */
+}
+
+.input {
+    /* Estilos para el campo de entrada */
+    
+}
+
+/* LoginForm.css */
+
+/* Estilos para pantallas más pequeñas */
+@media screen and (max-width: 1077px) {
+    .loginform-container{
+        width: 100%;
+    }
+    .input-group {
+        /* Estilos para el grupo de entrada */
+        width: 70%;
+
+    }
+    .lines-decoration::after,
+    .lines-decoration::before {
+        width: 15%; /* Reducir el ancho de las líneas de decoración */
+    }
+
+    .header-section {
+        margin-bottom: 2px; /* Reducir el margen inferior del encabezado */
+    }
+
+    form{
+      
+        width: auto;    
+    }
+  
+        .label {
+        font-size: 14px; /* Reducir el tamaño de la fuente de las etiquetas */
+       
+    }
+    .input{
+        background-color: goldenrod;
+    }
+}
