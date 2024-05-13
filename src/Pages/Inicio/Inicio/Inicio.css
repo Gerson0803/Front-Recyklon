@@ -1,0 +1,87 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.inicio-principal {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.inicio-container {
+  display: flex;
+  min-width: 100%;
+  align-items: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra en la parte inferior */
+}
+
+.inicio-elementos {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+}
+
+.contenedor-textos {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.inicio-texto-contenedor {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inicio-texto-principal,
+.inicio-texto-pequeño {
+  width: 100%;
+  text-align: center;
+  font-size: 2vw; /* Tamaño de fuente inicial basado en el ancho de la ventana */
+}
+.inicio-texto-principal{
+  font-size: 4vw;
+}
+
+@media screen and (max-width: 543px) {
+  /* Estilos que se aplicarán cuando la pantalla tenga 543px de ancho o menos */
+  /* Por ejemplo: */
+  .inicio-container {
+    display: flex;
+  }
+  .inicio-elementos{
+    flex-direction: column;
+    height: auto;
+  }
+  /* Media query para ajustar el tamaño de fuente cuando la pantalla es más pequeña */
+  .inicio-texto-principal {
+    font-size: 6vw; /* Tamaño de fuente más grande para pantallas pequeñas */
+  }
+
+  .inicio-texto-pequeño {
+    font-size: 3vw; /* Tamaño de fuente más grande para pantallas pequeñas */
+  }
+
+  /* Agregamos estilos para ajustar el contenedor de elementos */
+  .inicio-container {
+    flex-direction: column; /* Cambia la dirección del contenedor a columna */
+  }
+}

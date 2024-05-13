@@ -1,0 +1,83 @@
+html {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+  body {
+    margin: 0;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  .login-principal  {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    flex-wrap: wrap;
+  }
+  .login-decorado{
+    color: #EE8C45;
+    padding: 40px;
+    height: 50px;
+    font-size: 40px;
+  }
+  .login-container-left {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    width: 60%; /* La parte izquierda toma el 50% del ancho */
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-image: url(../../../Assets/ImagenFondo/erik-mclean-GjCx5KhulZI-unsplash.jpg);
+    opacity: 0.8;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .login-container-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%; /* La parte derecha toma el 50% del ancho */
+    height: 100vh;
+
+
+  }
+  
+  .login-container-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+    width: 80%;
+    height: 70%;
+    box-shadow: 0px 4px 4px 4px rgba(0.5, 0.5, 0.5, 0.5); /* Sombra en la parte inferior */
+   
+
+  }
+  .login-container-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+    
+  }
+  @media screen and (max-width: 1077px) {
+    .login-container-right {
+        width: 100%; /* La parte derecha ocupa el 100% del ancho */
+        background-image: none; /* Elimina la imagen de fondo */
+    }
+
+    .login-container-form {
+        width: 80%; /* El formulario ocupa el 100% del ancho */
+    }
+}

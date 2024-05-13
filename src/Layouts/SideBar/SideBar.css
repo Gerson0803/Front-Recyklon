@@ -1,0 +1,75 @@
+/* SideBar.css */
+
+.sidebar-menu_content {
+  width: calc(20vw - 10px); /* 20% del ancho total de la pantalla, menos el ancho del borde del grid (10px) */
+  display: grid;
+  grid-template-rows: 3/12;
+ 
+  flex-direction: column;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4); /* Ajusta estos valores según la sombra deseada */
+}
+
+.sidebar-user_container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+
+.sidebar-elementos {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.sidebar-settings {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  flex-grow: 1;
+  /* Estilos compartidos para los contenedores de usuario, elementos y configuraciones */
+}
+
+.sidebar-item {
+  /* Estilos para los elementos individuales en el contenedor de usuario */
+}
+
+.sidebar-elemento {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: 80%;
+  height: 40px;
+  margin: 2px;
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+}
+
+.sidebar-elemento:hover {
+  color: #FFA500; /* Cambia el color del texto al pasar el mouse */
+}
+
+.sidebar-elemento:active {
+  text-decoration: underline; /* Subraya el texto al hacer clic */
+  color: #FFA500; /* Mantiene el color naranja al hacer clic */
+}
+
+.sidebar-elemento.selected {
+  color: #FFA500; /* Color naranja */
+}
+
+.sidebar-elemento.selected .sidebar-division:first-child {
+  border-left: 5px solid #FFA500; /* Margen naranja en el lado izquierdo */
+  padding-left: 4px;
+}
+
+.sidebar-division {
+  margin-right: 10%;
+}
+
+.sidebar-settings {
+  width: 100%; /* Opcional: asegúrate de que las configuraciones ocupen todo el ancho */
+}
