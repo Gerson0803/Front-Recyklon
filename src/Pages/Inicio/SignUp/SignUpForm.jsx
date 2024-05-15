@@ -1,58 +1,38 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import './SignUpForm.css';
 
-const SignUpForm = ({ setUserData }) => {
+const SignUpForm = () => {
+    // Estados para almacenar los valores del formulario
     const [nombre, setNombre] = useState('');
     const [apellido, setApellido] = useState('');
     const [correo, setCorreo] = useState('');
     const [contraseña, setContraseña] = useState('');
     const [tipoUsuario, setTipoUsuario] = useState('normal');
-    const [contacto, setContacto] = useState('');
-    const [registrationSuccess, setRegistrationSuccess] = useState(false);
-    const navigate = useNavigate();
 
+    // Función para manejar el envío del formulario
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         try {
-            const dataToSend = {
+           
+            const response = await axios.post('http://localhost:3000/auth/register', {
                 nombre: nombre,
                 apellido: apellido,
                 correo: correo,
                 contraseña: contraseña,
-                tipoUsuario: tipoUsuario,
-                contacto: contacto
-            };
+                tipoUsuario: tipoUsuario
+            });
 
-            console.log('Datos enviados al endpoint:', dataToSend);
-
-            const response = await axios.post('http://localhost:3000/auth/register', dataToSend);
-            
+            // Manejar la respuesta del backend
             console.log('Respuesta del backend:', response.data);
-
-            setRegistrationSuccess(true);
-            setUserData(response.data);
-
-            // Redirigir a la página del menú
-            navigate('/Menu');
-
         } catch (error) {
-            if (error.response && error.response.data) {
-                console.error('Error al enviar el formulario:', error.response.data);
-            } else {
-                console.error('Error al enviar el formulario:', error.message);
-            }
+            // Manejar errores
+            console.error('Error al enviar el formulario:', error);
         }
     };
-
-    if (registrationSuccess) {
-        // No se renderiza nada aquí porque ya redirigimos al menú
-        return null;
-    }
 
     return (
         <div className="container">
@@ -102,42 +82,16 @@ const SignUpForm = ({ setUserData }) => {
                     />
                 </div>
                 <div className="input-group">
-                    <label htmlFor="contacto">Contacto:</label>
-                    <input
-                        type="text"
-                        id="contacto"
-                        name="contacto"
-                        placeholder="Ingresa tu contacto"
-                        value={contacto}
-                        onChange={(e) => setContacto(e.target.value)}
-                    />
-                </div>
-                <div className="input-group">
                     <label htmlFor="tipoUsuario">Tipo de Usuario:</label>
-                    <div>
-                        <label>
-                            <input
-                                type="radio"
-                                name="tipoUsuario"
-                                value="normal"
-                                checked={tipoUsuario === "normal"}
-                                onChange={() => setTipoUsuario("normal")}
-                            />
-                            Normal
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            <input
-                                type="radio"
-                                name="tipoUsuario"
-                                value="corporativo"
-                                checked={tipoUsuario === "corporativo"}
-                                onChange={() => setTipoUsuario("corporativo")}
-                            />
-                            Corporativo
-                        </label>
-                    </div>
+                    <select
+                        id="tipoUsuario"
+                        name="tipoUsuario"
+                        value={tipoUsuario}
+                        onChange={(e) => setTipoUsuario(e.target.value)}
+                    >
+                        <option value="normal">Normal</option>
+                        <option value="corporativo">Corporativo</option>
+                    </select>
                 </div>
                 <button type="submit" className="button">
                     <span className="button-text">Registrarse</span>
@@ -149,10 +103,6 @@ const SignUpForm = ({ setUserData }) => {
             </p>
         </div>
     );
-};
-
-SignUpForm.propTypes = {
-    setUserData: PropTypes.func.isRequired
 };
 
 export default SignUpForm;

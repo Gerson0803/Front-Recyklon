@@ -1,52 +1,53 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .input-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-    text-align: left; /* Alinea el texto a la izquierda dentro de los grupos de entrada */
-    ;
-  }
-  
-  .input-group label {
-    margin-bottom: 10px;
-    
-    
-  }
-  
-  .input-group input {
-    width: 250px; /* Ancho fijo para los campos de entrada */
-    border: 2px solid #EE8C45;
-    border-radius: 2px;
-    height: 40px;
-  }
-  
-  .button {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #EE8C45;
+  border-radius: 5px;
+}
+
+.button {
+  display: inline-block;
+  background-color: #EE8C45;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #ff9f6e;
+}
+
+.small-text {
+  margin-top: 20px;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+
+  .input-group input,
+  .input-group select {
     width: 100%;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #EE8C45;
-    border: 0cap;
-    height: 50px;
   }
-  
-  .button-text {
-    margin-right: 5px; /* Espacio a la derecha del texto */
+  .container{
+    width: 100%;
   }
-  
-  .button-icon {
-    margin-left: 5px; /* Espacio a la izquierda del icono */
-  }
-  
-  .small-text {
-    margin-top: 20px;
-  }
-  
+}

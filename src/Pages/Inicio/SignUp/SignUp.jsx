@@ -29,7 +29,7 @@ function SignUp() {
       <div className="Supe">
         <div className="Mateo">
           <div className="Carlos">
-            <LogoSection/>
+            { <LogoSection/> }
             <p className="decorado">Hola</p>
             <div className="button-section">
               <GoogleButton />
