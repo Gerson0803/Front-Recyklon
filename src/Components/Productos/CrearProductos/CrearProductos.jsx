@@ -1,13 +1,14 @@
+// JSX
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import "./CrearProductos.css"
 
 const imagenesPorCategoria = {
-  'Artículos de decoración y manualidades': 'https://via.placeholder.com/150',
-  'Artículos para el hogar': 'https://via.placeholder.com/150',
-  'Muebles y accesorios': 'https://via.placeholder.com/150',
-  'Juguetes y juegos': 'https://via.placeholder.com/150',
-  'Accesorios de moda': 'https://via.placeholder.com/150',
-  
+  'Artículos de decoración y manualidades': 'https://d2z8zvwx6itreb.cloudfront.net/fomentando-el-reciclaje-en-los-ninos-a-traves-del-arte-y-las-manualidades-large-R22zbK53PO.jpg',
+  'Artículos para el hogar': 'https://educowebmedia.blob.core.windows.net/educowebmedia/educospain/media/images/blog/reciclaje-macetas.jpg',
+  'Muebles y accesorios': 'https://connectionsbyfinsa.com/wp-content/uploads/2018/03/ConnectionsbyFinsa-muebles-reciclaje-woojai-papel.jpg',
+  'Juguetes y juegos': 'https://sentinelcat.com/wp-content/uploads/2023/03/juguetes-reciclados-originales.jpg',
+  'Accesorios de moda': 'https://i.pinimg.com/736x/7c/d2/d9/7cd2d92fca7bdfb6f1ea9a75254b6929.jpg ',
 };
 
 const FormularioProducto = ({ userId }) => {
@@ -30,7 +31,6 @@ const FormularioProducto = ({ userId }) => {
       'Muebles y accesorios',
       'Juguetes y juegos',
       'Accesorios de moda',
-      
     ]);
   }, []);
 
@@ -48,11 +48,9 @@ const FormularioProducto = ({ userId }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      
       const precio = parseFloat(productoData.precio);
       const cantidadDisponible = parseInt(productoData.cantidadDisponible);
 
-      
       const datosAEnviar = {
         nombreProducto: productoData.nombreProducto,
         descripcion: productoData.descripcion,
@@ -64,7 +62,6 @@ const FormularioProducto = ({ userId }) => {
         imagen: productoData.imagen
       };
 
-     
       const response = await axios.post('http://localhost:3000/products', datosAEnviar);
       console.log('Producto creado:', response.data);
     } catch (error) {
@@ -73,51 +70,53 @@ const FormularioProducto = ({ userId }) => {
   };
 
   return (
-    <div>
-      <h2>Crear Nuevo Producto</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Nombre del Producto:</label>
-          <input type="text" name="nombreProducto" value={productoData.nombreProducto} onChange={handleChange} />
-        </div>
-        <div>
-          <label>Descripción:</label>
-          <textarea name="descripcion" value={productoData.descripcion} onChange={handleChange} />
-        </div>
-        <div>
-          <label>Precio:</label>
-          <input type="number" name="precio" value={productoData.precio} onChange={handleChange} />
-        </div>
-        <div>
-          <label>Estado:</label>
-          <input type="text" name="estado" value={productoData.estado} onChange={handleChange} />
-        </div>
-        <div>
-          <label>ID del Vendedor:</label>
-          <input type="number" name="idVendedor" value={productoData.idVendedor} onChange={handleChange} readOnly />
-        </div>
-        <div>
-          <label>Cantidad Disponible:</label>
-          <input type="number" name="cantidadDisponible" value={productoData.cantidadDisponible} onChange={handleChange} />
-        </div>
-        <div>
-          <label>Categoría:</label>
-          {categorias.map((categoria, index) => (
-            <div key={index}>
-              <input
-                type="radio"
-                id={`categoria-${index}`}
-                name="categoria"
-                value={categoria}
-                checked={categoria === categoriaSeleccionada}
-                onChange={handleCategoriaChange}
-              />
-              <label htmlFor={`categoria-${index}`}>{categoria}</label>
-            </div>
-          ))}
-        </div>
-        <button type="submit">Crear Producto</button>
-      </form>
+    <div className="FormularioProducto-container">
+      <div className="FormularioProducto-content">
+        <h2>Crear Nuevo Producto</h2>
+        <form onSubmit={handleSubmit} className="FormularioProducto-form">
+          <div>
+            <label>Nombre del Producto:</label>
+            <input type="text" name="nombreProducto" value={productoData.nombreProducto} onChange={handleChange} />
+          </div>
+          <div>
+            <label>Descripción:</label>
+            <textarea name="descripcion" value={productoData.descripcion} onChange={handleChange} />
+          </div>
+          <div>
+            <label>Precio:</label>
+            <input type="number" name="precio" value={productoData.precio} onChange={handleChange} />
+          </div>
+          <div>
+            <label>Estado:</label>
+            <input type="text" name="estado" value={productoData.estado} onChange={handleChange} />
+          </div>
+          <div>
+            <label>ID del Vendedor:</label>
+            <input type="number" name="idVendedor" value={productoData.idVendedor} onChange={handleChange} readOnly />
+          </div>
+          <div>
+            <label>Cantidad Disponible:</label>
+            <input type="number" name="cantidadDisponible" value={productoData.cantidadDisponible} onChange={handleChange} />
+          </div>
+          <div>
+            <label>Categoría:</label>
+            {categorias.map((categoria, index) => (
+              <div key={index}>
+                <input
+                  type="radio"
+                  id={`categoria-${index}`}
+                  name="categoria"
+                  value={categoria}
+                  checked={categoria === categoriaSeleccionada}
+                  onChange={handleCategoriaChange}
+                />
+                <label htmlFor={`categoria-${index}`}>{categoria}</label>
+              </div>
+            ))}
+          </div>
+          <button type="submit">Crear Producto</button>
+        </form>
+      </div>
     </div>
   );
 };

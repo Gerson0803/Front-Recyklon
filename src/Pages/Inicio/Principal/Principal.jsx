@@ -1,3 +1,4 @@
+// Principal.js
 import React, { useState, useEffect } from "react";
 import NavBar from "../../../Components/Navbar/NavBar";
 import FormularioProducto from "../../../Components/Productos/CrearProductos/CrearProductos";
@@ -10,18 +11,13 @@ import Profile from "../../../Components/SideBarComponents/Profile/Profile";
 import ContactUs from "../../../Components/SideBarComponents/ContactUs/ContactUs";
 import "./Principal.css";
 
-function Principal() {
-  const [userData, setUserData] = useState(null);
-  const [selectedSection, setSelectedSection] = useState(null);
+const Principal = () => {
+  const [userData, setUserData] = useState(() => {
+    const savedData = localStorage.getItem("userData");
+    return savedData ? JSON.parse(savedData) : {};
+  });
+  const [selectedSection, setSelectedSection] = useState("Shop");
 
-  useEffect(() => {
-    // Obtener datos del localStorage al cargar el componente
-    const userDataFromLocalStorage = JSON.parse(localStorage.getItem("userData"));
-    setUserData(userDataFromLocalStorage);
-  
-    // No se define ninguna función de limpieza para evitar que los datos se eliminen del localStorage
-  }, []);
-  
   const handleSidebarItemClick = (section) => {
     setSelectedSection(section);
   };
@@ -32,10 +28,10 @@ function Principal() {
       componentToRender = <Inicio />;
       break;
     case "ShoppingCart":
-      componentToRender = <ShoppingCart />;
+      componentToRender = <ShoppingCart userId={userData?.id} />;
       break;
     case "Shop":
-      componentToRender = <FormularioProducto userId={userData ? userData.id : null} />;
+      componentToRender = <FormularioProducto userId={userData?.id} />;
       break;
     case "Community":
       componentToRender = <Community />;
@@ -47,18 +43,18 @@ function Principal() {
       componentToRender = <ContactUs />;
       break;
     default:
-      componentToRender = <Shop/>;
+      componentToRender = <Shop />;
   }
 
   return (
     <div className="principal">
-      <div className="principal-container-menu">
-        <SideBar nombre={userData ? userData.nombre : "Sapa"} onSidebarItemClick={handleSidebarItemClick} />
+      <SideBar nombre={userData?.nombre || "Sapa"} onSidebarItemClick={handleSidebarItemClick} />
+      <div className="principal-main">
+        <NavBar />
+        <div className="principal-content">{componentToRender}</div>
       </div>
-      <NavBar />
-      <div className="principal-content">{componentToRender}</div>
     </div>
   );
-}
+};
 
 export default Principal;

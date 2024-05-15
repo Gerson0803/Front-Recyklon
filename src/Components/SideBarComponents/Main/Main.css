@@ -1,0 +1,78 @@
+.principal-content {
+  margin: 0;
+  overflow-y: auto;
+  grid-row: 2 / 13;
+  grid-column: 2 / -1;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+.product-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.producto-container {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.producto-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.producto-content {
+  padding: 15px;
+  text-align: center;
+}
+
+.todos-los-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.producto-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.producto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.producto-card h3 {
+  margin: 15px 0;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.producto-card p {
+  color: #666;
+}
+
+.producto-card .price {
+  font-weight: bold;
+  color: #000;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+  text-align: center;
+}

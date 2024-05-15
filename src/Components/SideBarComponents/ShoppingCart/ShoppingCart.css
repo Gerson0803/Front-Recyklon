@@ -1,0 +1,72 @@
+/* CSS */
+.ShoppingCart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+  }
+  
+  .ShoppingCart-content {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .ShoppingTable-container {
+    overflow-x: auto;
+  }
+  
+  .ShoppingTable {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .ShoppingTable th,
+  .ShoppingTable td {
+    padding: 12px;
+    text-align: center;
+  }
+  
+  .ShoppingTable th {
+    background-color: #f2f2f2;
+  }
+  
+  .ShoppingTable td {
+    background-color: #ffffff;
+  }
+  
+  .ShoppingTable-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .ShoppingTable-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .ShoppingTable-buttons button {
+    margin: 0 5px;
+    padding: 8px 16px;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .edit-button {
+    background-color: #4caf50; /* Color verde para el botón de editar */
+  }
+  
+  .delete-button {
+    background-color: #f44336; /* Color rojo para el botón de eliminar */
+  }
+  

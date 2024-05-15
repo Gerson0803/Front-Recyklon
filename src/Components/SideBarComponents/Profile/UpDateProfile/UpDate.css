@@ -1,0 +1,35 @@
+.update-user-container {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .update-user-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .update-user-input {
+    margin-bottom: 15px;
+  }
+  
+  .update-user-label {
+    margin-right: 10px;
+  }
+  
+  .update-user-button {
+    padding: 8px 16px;
+    background-color: #4caf50;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .update-user-button:hover {
+    background-color: #45a049;
+  }
+  

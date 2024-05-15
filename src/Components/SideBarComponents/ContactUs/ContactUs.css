@@ -1,0 +1,84 @@
+/* ContactUs.css */
+
+/* Contenedor principal */
+.contact-us-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Contenido */
+  .contact-us-content {
+    width: 60%;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Título */
+  .contact-us-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  /* Descripción */
+  .contact-us-description {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  /* Formulario */
+  .contact-us-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Grupo de formularios */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  /* Etiqueta del formulario */
+  .form-group label {
+    font-size: 18px;
+  }
+  
+  /* Entrada del formulario */
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s;
+  }
+  
+  .form-group textarea {
+    resize: none;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #4caf50;
+  }
+  
+  /* Botón de enviar */
+  .submit-button {
+    padding: 12px 24px;
+    background-color: #4caf50;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-button:hover {
+    background-color: #45a049;
+  }
+  

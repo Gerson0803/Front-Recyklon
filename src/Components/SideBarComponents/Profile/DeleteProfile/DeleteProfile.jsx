@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import "./DeleteProfile.css";
 
 const DeleteUserComponent = () => {
   const userId = JSON.parse(localStorage.getItem('userData')).id; // Obtiene el ID del usuario del localStorage
@@ -15,10 +16,10 @@ const DeleteUserComponent = () => {
   };
 
   return (
-    <div>
-      <h2>Eliminar Usuario</h2>
-      <p>¿Estás seguro de que deseas eliminar tu usuario?</p>
-      <button onClick={deleteUser}>Eliminar Usuario</button>
+    <div className="delete-user-container">
+      <h2 className="delete-user-title">Eliminar Usuario</h2>
+      <p className="delete-user-text">¿Estás seguro de que deseas eliminar tu usuario?</p>
+      <button className="delete-user-button" onClick={deleteUser}>Eliminar Usuario</button>
     </div>
   );
 };

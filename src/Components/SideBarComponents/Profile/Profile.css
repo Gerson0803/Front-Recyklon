@@ -1,28 +1,48 @@
+/* Profile.css */
 
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
+/* Estilos para el contenedor principal */
 .profile-principal-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
-}
-
-.profile-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    height: 100vh; /* Ajusta la altura según sea necesario */
+    background-color: #f9f9f9; /* Color de fondo */
+  }
+  
+  /* Estilos para el contenido del perfil */
+  .profile-content {
     width: 80%;
-    max-width: 600px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #ffffff; /* Color de fondo del contenido */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra */
+  }
+  
+  /* Estilos para el título del perfil */
+  .profile-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333; /* Color del texto */
+  }
+  
+  /* Estilos para los componentes hijos */
+  .profile-component {
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para los botones */
+  .profile-button {
+    padding: 12px 24px;
+    background-color: #4caf50; /* Color verde */
+    color: #ffffff; /* Color del texto */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .profile-button:hover {
+    background-color: #45a049; /* Color verde oscuro al pasar el mouse */
+  }
+  

@@ -1,11 +1,7 @@
+/* Estilos generales */
 html {
   box-sizing: border-box;
-}
-
-body {
-  padding: 0px;
-  margin: 0px;
-  border: 0px;
+  background-color: orange;
 }
 
 *,
@@ -14,20 +10,35 @@ body {
   box-sizing: inherit;
 }
 
+body {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal */
 .inicio-principal {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: #f0f0f0;
+  margin-bottom: 50px;
+  overflow-x: hidden;
 }
 
+/* Contenedor del encabezado */
 .inicio-container {
   display: flex;
   min-width: 100%;
   align-items: center;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra en la parte inferior */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  border-bottom: 2px solid orange;
 }
 
+/* Elementos del encabezado */
 .inicio-elementos {
   display: flex;
   justify-content: space-around;
@@ -37,51 +48,164 @@ body {
   padding: 0;
 }
 
+/* Contenedor de los textos */
 .contenedor-textos {
   width: 100%;
   display: flex;
   justify-content: center;
+  background-color: #ffffff;
+  margin-top: auto;
 }
 
+/* Contenedor del contenido de los textos */
 .inicio-texto-contenedor {
   width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  
 }
 
+/* Textos principales */
 .inicio-texto-principal,
-.inicio-texto-pequeño {
+.inicio-texto-pequeño,
+.inicio-titulo-que_es,
+.inicio-titulo-importancia_recic,
+.inicio-titulo-funciones {
   width: 100%;
   text-align: center;
-  font-size: 2vw; /* Tamaño de fuente inicial basado en el ancho de la ventana */
-}
-.inicio-texto-principal{
-  font-size: 4vw;
+
 }
 
-@media screen and (max-width: 543px) {
-  /* Estilos que se aplicarán cuando la pantalla tenga 543px de ancho o menos */
-  /* Por ejemplo: */
-  .inicio-container {
-    display: flex;
-  }
-  .inicio-elementos{
-    flex-direction: column;
-    height: auto;
-  }
-  /* Media query para ajustar el tamaño de fuente cuando la pantalla es más pequeña */
-  .inicio-texto-principal {
-    font-size: 6vw; /* Tamaño de fuente más grande para pantallas pequeñas */
-  }
+.inicio-texto-principal {
+  font-size: 2vw;
+  color: #333333;
+}
 
-  .inicio-texto-pequeño {
-    font-size: 3vw; /* Tamaño de fuente más grande para pantallas pequeñas */
-  }
+.inicio-texto-pequeño {
+  font-size: 1.5vw;
+  color: #333333;
+}
 
-  /* Agregamos estilos para ajustar el contenedor de elementos */
-  .inicio-container {
-    flex-direction: column; /* Cambia la dirección del contenedor a columna */
-  }
+.inicio-titulo-que_es,
+.inicio-titulo-importancia_recic,
+.inicio-titulo-funciones {
+  margin-top: 30px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #007bff;
+  border-bottom: 2px solid orange;
+  padding-bottom: 5px;
+}
+
+.inicio-titulo-que_es:hover,
+.inicio-titulo-importancia_recic:hover,
+.inicio-titulo-funciones:hover {
+  background-color: #f9f9f9;
+}
+
+.inicio-titulo-que_es p,
+.inicio-titulo-importancia_recic p,
+.inicio-titulo-funciones p {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #333333;
+}
+
+/* Lista de funciones */
+.inicio-titulo-funciones ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.inicio-titulo-funciones ul li {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #333333;
+}
+
+/* Última información */
+.inicio-texto-ultimo {
+  margin-top: 50px;
+  font-size: 20px;
+  color: #333333;
+  text-align: center;
+  padding: 20px;
+  border: 2px solid orange;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: orange;
+  color: #000000;
+  padding: 20px 0;
+  text-align: center;
+  width: 100%;
+}
+
+/* Menús desplegables */
+.menu-desplegable {
+  display: none;
+}
+
+.menu-titulo {
+  cursor: pointer;
+}
+
+.menu-titulo:hover + .menu-desplegable {
+  display: block;
+}
+
+.menu-desplegable {
+  grid-column: span 2;
+}
+
+.menu-desplegable.open {
+  display: block;
+}
+
+
+.mas-informacion h2 {
+  font-size: 24px;
+  color: #333;
+  width: 100%;
+}
+
+
+
+
+
+.mas-informacion-contenedor {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+
+}
+
+.mas-informacion-contenedor h3 {
+  font-size: 18px;
+  color: #333;
+  margin-top: 0;
+}
+
+.mas-informacion-contenedor ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mas-informacion-contenedor ul li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #555;
 }

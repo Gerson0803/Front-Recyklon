@@ -1,0 +1,52 @@
+/* CSS */
+.FormularioProducto-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+  }
+  
+  .FormularioProducto-content {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .FormularioProducto-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .FormularioProducto-form label {
+    font-weight: bold;
+  }
+  
+  .FormularioProducto-form input[type="text"],
+  .FormularioProducto-form input[type="number"],
+  .FormularioProducto-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .FormularioProducto-form textarea {
+    height: 100px;
+  }
+  
+  .FormularioProducto-form button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .FormularioProducto-form button:hover {
+    background-color: #45a049;
+  }
+  

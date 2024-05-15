@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import "./UpDate.css"
 
 // Componente UpdateUserComponent
 const UpdateUserComponent = () => {
@@ -39,34 +40,34 @@ const UpdateUserComponent = () => {
   };
 
   return (
-    <div>
-      <h2>Actualizar Usuario</h2>
+    <div className="update-user-container">
+      <h2 className="update-user-title">Actualizar Usuario</h2>
       <form>
-        <div>
-          <label>Nombre:</label>
+        <div className="update-user-input">
+          <label className="update-user-label">Nombre:</label>
           <input type="text" name="nombre" value={userData.nombre} onChange={handleChange} />
         </div>
-        <div>
-          <label>Apellido:</label>
+        <div className="update-user-input">
+          <label className="update-user-label">Apellido:</label>
           <input type="text" name="apellido" value={userData.apellido} onChange={handleChange} />
         </div>
-        <div>
-          <label>Correo:</label>
+        <div className="update-user-input">
+          <label className="update-user-label">Correo:</label>
           <input type="email" name="correo" value={userData.correo} onChange={handleChange} />
         </div>
-        <div>
-          <label>Contraseña:</label>
+        <div className="update-user-input">
+          <label className="update-user-label">Contraseña:</label>
           <input type="text" name="contraseña" value={userData.contraseña} onChange={handleChange} />
         </div>
-        <div>
-          <label>Contacto:</label>
+        <div className="update-user-input">
+          <label className="update-user-label">Contacto:</label>
           <input type="text" name="contacto" value={userData.contacto} onChange={handleChange} />
         </div>
-        <div>
-          <label>Tipo de Usuario:</label>
+        <div className="update-user-input">
+          <label className="update-user-label">Tipo de Usuario:</label>
           <input type="text" name="tipoUsuario" value={userData.tipoUsuario} onChange={handleChange} disabled />
         </div>
-        <button type="button" onClick={updateUser}>Actualizar</button>
+        <button type="button" className="update-user-button" onClick={updateUser}>Actualizar</button>
       </form>
     </div>
   );
