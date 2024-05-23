@@ -8,10 +8,12 @@ import GoogleButton from '../../../BotonGoogle';
 const LoginForm = () => {
     const [correo, setCorreo] = useState('');
     const [contraseña, setContraseña] = useState('');
+    const [error, setError] = useState(null);
     const navigate = useNavigate();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        console.log(correo, contraseña, "holaaaaaaaaaa");
         try {
             const response = await axios.post('http://localhost:3000/auth/login', {
                 correo: correo,
@@ -21,16 +23,20 @@ const LoginForm = () => {
             if (response.status === 201) {
                 // Guardar la información del usuario en el localStorage
                 localStorage.setItem('userData', JSON.stringify(response.data));
+                console.log("Login successful");
+                console.log(response.data);
 
                 // Redirigir a la página del menú después de un inicio de sesión exitoso
                 navigate('/Menu');
             } else {
                 // Mostrar un mensaje de error al usuario en caso de un inicio de sesión fallido
-                console.error('Error al iniciar sesión:', response.data.message);
+                setError(response.data?.message || 'Error al iniciar sesión: respuesta no válida');
+                console.error('Error al iniciar sesión:', response.data?.message || 'respuesta no válida');
             }
         } catch (error) {
             // Mostrar un mensaje de error al usuario en caso de un error en la solicitud
-            console.error('Error al iniciar sesión:', error.response.data);
+            setError(error.response?.data?.message || 'Error al iniciar sesión: no se pudo acceder a la respuesta del servidor');
+            console.error('Error al iniciar sesión:', error.response?.data || 'no se pudo acceder a la respuesta del servidor');
         }
     };
 
@@ -48,13 +54,13 @@ const LoginForm = () => {
                 <form onSubmit={handleSubmit}>
                     <div className="input-group">
                         <label htmlFor="email" className="label">
-                            Nombre de usuario:
+                            Correo Electronico:
                         </label>
                         <input
                             type="text"
                             id="email"
                             name="email"
-                            placeholder="Ingresa tu nombre de usuario"
+                            placeholder="Ingresa tu correo electronico"
                             value={correo}
                             onChange={(e) => setCorreo(e.target.value)}
                             className="input"
@@ -74,7 +80,7 @@ const LoginForm = () => {
                             className="input"
                         />
                     </div>
-
+                    {error && <p className="error-message">{error}</p>}
                     <Button type="submit" texto={"Iniciar sesión"} />
                 </form>
                 <p>You don't have an account? <a href="#">Sign Up</a></p>

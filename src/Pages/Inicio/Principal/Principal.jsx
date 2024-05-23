@@ -1,4 +1,3 @@
-// Principal.js
 import React, { useState, useEffect } from "react";
 import NavBar from "../../../Components/Navbar/NavBar";
 import FormularioProducto from "../../../Components/Productos/CrearProductos/CrearProductos";
@@ -23,9 +22,10 @@ const Principal = () => {
   };
 
   let componentToRender;
+  console.log("Datos del usuario:", userData);
   switch (selectedSection) {
     case "Inicio":
-      componentToRender = <Inicio />;
+      componentToRender = <Inicio userId={userData?.id} />;
       break;
     case "ShoppingCart":
       componentToRender = <ShoppingCart userId={userData?.id} />;
@@ -48,9 +48,8 @@ const Principal = () => {
 
   return (
     <div className="principal">
-      <SideBar nombre={userData?.nombre || "Sapa"} onSidebarItemClick={handleSidebarItemClick} />
+      <SideBar nombre={userData?.nombre || "vacio"} onSidebarItemClick={handleSidebarItemClick} />
       <div className="principal-main">
-        <NavBar />
         <div className="principal-content">{componentToRender}</div>
       </div>
     </div>

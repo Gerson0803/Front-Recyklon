@@ -19,6 +19,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/icons-material": "^5.15.15",
     "@mui/material": "^5.15.15",
+    "@paypal/react-paypal-js": "^8.3.0",
     "axios": "^1.6.8",
     "class-validator": "^0.14.1",
     "react": "^18.2.0",

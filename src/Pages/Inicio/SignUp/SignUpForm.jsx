@@ -1,38 +1,51 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import './SignUpForm.css';
 
-const SignUpForm = () => {
-    // Estados para almacenar los valores del formulario
+const SignUpForm = ({ setUserData }) => {
     const [nombre, setNombre] = useState('');
     const [apellido, setApellido] = useState('');
     const [correo, setCorreo] = useState('');
     const [contraseña, setContraseña] = useState('');
     const [tipoUsuario, setTipoUsuario] = useState('normal');
+    const [contacto, setContacto] = useState('');
+    const [registrationSuccess, setRegistrationSuccess] = useState(false);
+    const navigate = useNavigate();
 
-    // Función para manejar el envío del formulario
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         try {
-           
-            const response = await axios.post('http://localhost:3000/auth/register', {
+            const dataToSend = {
                 nombre: nombre,
                 apellido: apellido,
                 correo: correo,
                 contraseña: contraseña,
-                tipoUsuario: tipoUsuario
-            });
+                tipoUsuario: tipoUsuario,
+                contacto: contacto
+            };
 
-            // Manejar la respuesta del backend
-            console.log('Respuesta del backend:', response.data);
+            const response = await axios.post('http://localhost:3000/auth/register', dataToSend);
+            localStorage.setItem('userData', JSON.stringify(response.data)); // Guardar los datos del usuario registrado
+            setRegistrationSuccess(true);
+            setUserData(response.data);
+            navigate('/Menu');
         } catch (error) {
-            // Manejar errores
-            console.error('Error al enviar el formulario:', error);
+            if (error.response && error.response.data) {
+                console.error('Error al enviar el formulario:', error.response.data);
+            } else {
+                console.error('Error al enviar el formulario:', error.message);
+            }
         }
     };
+
+    if (registrationSuccess) {
+        return null;
+    }
 
     return (
         <div className="container">
@@ -82,16 +95,40 @@ const SignUpForm = () => {
                     />
                 </div>
                 <div className="input-group">
+                    <label htmlFor="contacto">Contacto:</label>
+                    <input
+                        type="text"
+                        id="contacto"
+                        name="contacto"
+                        placeholder="Ingresa tu contacto"
+                        value={contacto}
+                        onChange={(e) => setContacto(e.target.value)}
+                    />
+                </div>
+                <div className="input-group">
                     <label htmlFor="tipoUsuario">Tipo de Usuario:</label>
-                    <select
-                        id="tipoUsuario"
-                        name="tipoUsuario"
-                        value={tipoUsuario}
-                        onChange={(e) => setTipoUsuario(e.target.value)}
-                    >
-                        <option value="normal">Normal</option>
-                        <option value="corporativo">Corporativo</option>
-                    </select>
+                    <div className="radio-group">
+                        <label>
+                            <input
+                                type="radio"
+                                name="tipoUsuario"
+                                value="normal"
+                                checked={tipoUsuario === "normal"}
+                                onChange={() => setTipoUsuario("normal")}
+                            />
+                            Normal
+                        </label>
+                        <label>
+                            <input
+                                type="radio"
+                                name="tipoUsuario"
+                                value="corporativo"
+                                checked={tipoUsuario === "corporativo"}
+                                onChange={() => setTipoUsuario("corporativo")}
+                            />
+                            Corporativo
+                        </label>
+                    </div>
                 </div>
                 <button type="submit" className="button">
                     <span className="button-text">Registrarse</span>
@@ -103,6 +140,10 @@ const SignUpForm = () => {
             </p>
         </div>
     );
+};
+
+SignUpForm.propTypes = {
+    setUserData: PropTypes.func.isRequired
 };
 
 export default SignUpForm;

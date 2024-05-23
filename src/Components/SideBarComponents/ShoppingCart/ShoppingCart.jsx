@@ -12,13 +12,13 @@ const ShoppingCart = ({ userId }) => {
   useEffect(() => {
     const fetchProductos = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/products");
-        const productosDelUsuario = response.data.filter(
-          (producto) => producto.vendedor.id === userId
-        );
+        const response = await axios.get('http://localhost:3000/products');
+        console.log('Datos recibidos del servidor:', response.data); // Muestra todos los datos recibidos
+        const productosDelUsuario = response.data.filter(producto => producto.vendedor && producto.vendedor.id === userId);
+        console.log('Productos filtrados del usuario:', productosDelUsuario); // Muestra los datos filtrados
         setProductos(productosDelUsuario);
       } catch (error) {
-        console.error("Error al obtener los productos:", error);
+        console.error('Error al obtener los productos:', error);
       }
     };
     fetchProductos();
@@ -35,12 +35,12 @@ const ShoppingCart = ({ userId }) => {
   };
 
   const handleEditarProducto = (productId) => {
-    setProductoIdEditar(productId); // Guarda el ID del producto a editar
-    setMostrarEditarProducto(true); // Muestra la ventana emergente para editar el producto
+    setProductoIdEditar(productId);
+    setMostrarEditarProducto(true);
   };
 
   const handleCloseEditarProducto = () => {
-    setMostrarEditarProducto(false); // Oculta la ventana emergente para editar el producto
+    setMostrarEditarProducto(false);
   };
 
   return (
@@ -72,15 +72,14 @@ const ShoppingCart = ({ userId }) => {
                   <td>{producto.descripcion}</td>
                   <td>${producto.precio}</td>
                   <td className="ShoppingTable-buttons">
-                    
                     <button
-                      className="edit-button" // Clase para el botón de editar
+                      className="edit-button"
                       onClick={() => handleEditarProducto(producto.id)}
                     >
                       Editar
                     </button>
                     <button
-                      className="delete-button" // Clase para el botón de eliminar
+                      className="delete-button"
                       onClick={() => handleEliminarProducto(producto.id)}
                     >
                       <DeleteIcon />
