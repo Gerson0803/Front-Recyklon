@@ -1,37 +1,61 @@
+/* src/MasInformacion.css */
+
 .mas-informacion {
-    background-color: #f1eeee;
-    width: 100%;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1200px;
-  }
-  
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Columnas automáticas con un ancho mínimo de 300px */
-    gap: 20px; /* Espacio entre contenedores */
-  }
-  
-  
-  .contenedor-verde {
-    background-color: rgb(235, 246, 235);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .grande {
-    grid-column: span 2; /* Ocupa dos columnas */
-  }
-  
-  .mediano {
-    grid-column: span 1; /* Ocupa una columna */
-  }
-  
-  .pequeno {
-    grid-column: span 1; /* Ocupa una columna */
-  }
-  
+  background-color: #f1eeee;
+  width: 90%;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+}
+
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.contenedor-gris {
+  background-color: #ccc; /* Color de fondo gris para los contenedores principales */
+  width: 100%; /* Ancho completo */
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px; /* Espacio entre los contenedores principales */
+  display: flex; /* Para alinear los contenedores */
+}
+
+.contenedor-verde {
+  background-color: #c8f7dc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* Añade un espacio entre los contenedores */
+}
+
+.contenedor-verde.grande {
+  flex-grow: 2; /* Hace que este contenedor ocupe más espacio */
+}
+
+.text-content {
+  margin-bottom: 10px;
+}
+
+.image-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-content img {
+  max-width: 100%;
+  max-height: 200px; /* Ajusta el tamaño de las imágenes según sea necesario */
+  border-radius: 10px;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espacio entre el título y el contenido */
+}
