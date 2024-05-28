@@ -1,15 +1,19 @@
 /* Principal.css */
 .principal {
-  display: grid;
-  grid-template-columns: 20% 1fr;
+  display: flex;
   height: 100vh;
+  width: 100vw;
 }
 
 .principal-main {
-  display: grid;
-  grid-template-rows: auto 1fr;
+  display: flex;
+  flex-direction: column;
+  width: 80%; /* Ocupa el 80% del ancho total, dado que el sidebar ocupa el 20% */
+  margin-left: 20%; /* Desplaza el contenido principal para que no quede debajo del sidebar */
 }
 
 .principal-content {
-  overflow-y: auto;
+  flex-grow: 1;
+  overflow-y: auto; /* Scroll independiente para el contenido principal */
+  padding: 20px;
 }

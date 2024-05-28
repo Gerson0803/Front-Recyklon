@@ -1,0 +1,36 @@
+/* src/Components/UserCards/UserCards.css */
+.user-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Ajusta las columnas automáticamente */
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .user-card {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    word-wrap: break-word; /* Permite el ajuste de palabras largas */
+  }
+  
+  .user-card img.avatar {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .user-card h3 {
+    margin: 0 0 10px;
+  }
+  
+  .user-card p {
+    margin: 5px 0;
+    overflow-wrap: break-word; /* Ajuste de texto para evitar desbordamiento */
+    word-break: break-all; /* Rompe las palabras largas para que no desborden */
+  }
+  

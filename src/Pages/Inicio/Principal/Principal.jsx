@@ -15,7 +15,7 @@ const Principal = () => {
     const savedData = localStorage.getItem("userData");
     return savedData ? JSON.parse(savedData) : {};
   });
-  const [selectedSection, setSelectedSection] = useState("Shop");
+  const [selectedSection, setSelectedSection] = useState("Inicio");
 
   const handleSidebarItemClick = (section) => {
     setSelectedSection(section);

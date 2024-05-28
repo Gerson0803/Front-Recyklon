@@ -1,8 +1,13 @@
 /* SideBar.css */
 .sidebar-menu_content {
-  display: flex;
-  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
   height: 100vh;
+  width: 20%; /* Ajusta el ancho del sidebar según tus necesidades */
+  background-color: #fff; /* Fondo blanco para el sidebar */
+  z-index: 1000; /* Asegura que el sidebar esté por encima del contenido */
+  overflow-y: auto; /* Permite desplazamiento vertical si el contenido es demasiado largo */
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
 }
 
@@ -36,4 +41,5 @@
 
 .sidebar-division {
   margin-right: 10px;
+  
 }

@@ -13,7 +13,7 @@ import {
 import "./SideBar.css";
 
 const SideBar = ({ nombre, onSidebarItemClick }) => {
-  const [selectedSection, setSelectedSection] = useState("Shop");
+  const [selectedSection, setSelectedSection] = useState("Inicio");
 
   const handleItemClick = (section) => {
     setSelectedSection(section);
