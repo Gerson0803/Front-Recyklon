@@ -47,6 +47,9 @@ html {
     align-items: center;
     width: 40%; /* La parte derecha toma el 50% del ancho */
     height: 100vh;
+    background: rgb(22,74,65);
+  background: linear-gradient(20deg, rgba(22,74,65,1) 11%, rgba(77,119,78,1) 50%, rgba(157,200,141,1) 100%);
+      
 
 
   }
@@ -59,8 +62,6 @@ html {
     width: 80%;
     height: 70%;
     box-shadow: 0px 4px 4px 4px rgba(0.5, 0.5, 0.5, 0.5); /* Sombra en la parte inferior */
-   
-
   }
   .login-container-content{
     display: flex;

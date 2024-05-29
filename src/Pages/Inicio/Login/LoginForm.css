@@ -10,10 +10,12 @@
     align-items: center;
     text-align: center;
     
+    
 }
 .lines-decoration{
     position: relative;
     font-size: 15px;
+    
 }
 .lines-decoration::after,.lines-decoration::before{
     content:"";

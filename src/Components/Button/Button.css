@@ -1,10 +1,15 @@
 .boton {
-    background-color:#EE8C45;
-    color:white;
-    border: 0px;
-    width: auto;
-    height: auto;
-    border-radius: 3px;
-    margin-right: 10px;
-    /* Agrega más estilos personalizados aquí si es necesario */
+    background-color: #F1B24A; /* Color amarillo */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+}
+
+.boton:hover {
+    background-color: #FFD700; /* Color amarillo claro al pasar el mouse */
 }

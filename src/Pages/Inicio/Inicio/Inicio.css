@@ -1,152 +1,72 @@
-/* Estilos generales */
-html {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  background-color: rebeccapurple;
-  height: 100%;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
-  padding: 0;
+  background: linear-gradient(90deg, rgba(22, 74, 65, 1) 11%, rgba(77, 119, 78, 1) 50%, rgba(157, 200, 141, 1) 100%);
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.inicio-principal {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.content-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.inicio-section-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 250px); /* Altura restante menos la altura del footer y del Dots */
+}
+
+.inicio-division-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.inicio-left-side,
+.inicio-right-side {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  position: relative;
   margin: 0;
   border: 0;
-  font-family: Arial, sans-serif;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: #f0f0f0;
-}
-
-/* Contenedor principal */
-.inicio-principal {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Contenedor del encabezado */
-.inicio-container {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-  background-color: #ffffff;
-  border-bottom: 2px solid orange;
-}
-
-/* Elementos del encabezado */
-.inicio-elementos {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  list-style: none;
   padding: 0;
 }
 
-/* Contenedor de los textos */
-.contenedor-textos {
-  flex: 1;
+.inicio-prev-button,
+.inicio-next-button {
+  width: 10%;
+  height: 100%;
   display: flex;
-  justify-content: center;
-  background-color: #ffffff;
-  margin-top: auto;
-}
-
-/* Contenedor del contenido de los textos */
-.inicio-texto-contenedor {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-size: 2rem;
+  background: transparent;
+  border: none;
 }
 
-/* Textos principales */
-.inicio-texto-principal,
-.inicio-texto-pequeño,
-.inicio-titulo-que_es,
-.inicio-titulo-importancia_recic,
-.inicio-titulo-funciones {
+.dots-buttons {
   width: 100%;
-  text-align: center;
-}
-
-.inicio-texto-principal {
-  font-size: 2vw;
-  color: #333333;
-}
-
-.inicio-texto-pequeño {
-  font-size: 1.5vw;
-  color: #333333;
-}
-
-.inicio-titulo-que_es,
-.inicio-titulo-importancia_recic,
-.inicio-titulo-funciones {
-  margin-top: 30px;
-  cursor: pointer;
-  font-size: 20px;
-  color: #007bff;
-  border-bottom: 2px solid orange;
-  padding-bottom: 5px;
-}
-
-.inicio-titulo-que_es:hover,
-.inicio-titulo-importancia_recic:hover,
-.inicio-titulo-funciones:hover {
-  background-color: #f9f9f9;
-}
-
-.inicio-titulo-que_es p,
-.inicio-titulo-importancia_recic p,
-.inicio-titulo-funciones p {
-  margin-bottom: 10px;
-  font-size: 20px;
-  color: #333333;
-}
-
-/* Lista de funciones */
-.inicio-titulo-funciones ul {
-  list-style: none;
-  padding: 0;
-  text-align: left;
-}
-
-.inicio-titulo-funciones ul li {
-  margin-bottom: 10px;
-  font-size: 20px;
-  color: #333333;
-}
-
-/* Última información */
-.inicio-texto-ultimo {
-  margin-top: 50px;
-  margin-bottom: 20px; /* Añadir margen inferior */
-  font-size: 20px;
-  color: #333333;
-  text-align: center;
-  padding: 20px;
-  border: 2px solid orange;
-  border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Footer */
-.footer {
-  background-color: orange;
-  color: #000000;
-  padding: 20px 0;
-  text-align: center;
-  width: 100%;
+  display: flex;
+  justify-content: center;
 }

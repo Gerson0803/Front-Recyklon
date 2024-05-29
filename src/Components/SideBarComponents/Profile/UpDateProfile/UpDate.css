@@ -1,35 +1,102 @@
 .update-user-container {
-    margin: 20px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .update-user-title {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .update-user-input {
-    margin-bottom: 15px;
-  }
-  
-  .update-user-label {
-    margin-right: 10px;
-  }
-  
-  .update-user-button {
-    padding: 8px 16px;
-    background-color: #4caf50;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .update-user-button:hover {
-    background-color: #45a049;
-  }
-  
+  margin: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.update-user-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.update-user-input {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.update-user-label {
+  margin-right: 10px;
+  width: 150px;
+}
+
+.update-user-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.update-user-button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.update-user-button:hover {
+  background-color: #45a049;
+}
+
+/* Estilos para el modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modal-buttons button:first-child {
+  background-color: #4caf50;
+  color: white;
+}
+
+.modal-buttons button:first-child:hover {
+  background-color: #45a049;
+}
+
+.modal-buttons button:last-child {
+  background-color: #f44336;
+  color: white;
+}
+
+.modal-buttons button:last-child:hover {
+  background-color: #e53935;
+}
+
+/* Clase para aplicar el fondo gris al body */
+.modal-active {
+  background-color: rgba(0, 0, 0, 0.5);
+}

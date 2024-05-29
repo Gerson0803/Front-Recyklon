@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import "./EditarProducto.css";
 
 const imagenesPorCategoria = {
   'Artículos de decoración y manualidades': 'https://via.placeholder.com/150',
@@ -9,18 +10,20 @@ const imagenesPorCategoria = {
   'Accesorios de moda': 'https://via.placeholder.com/150',
 };
 
-const EditarProducto = ({ userId, productId }) => {
+const EditarProducto = ({ userId, productId, onClose }) => {
   const [productoData, setProductoData] = useState({
     nombreProducto: '',
     descripcion: '',
     precio: 0,
-    estado: '',
+    estado: 'disponible',
     idVendedor: userId,
     cantidadDisponible: 0,
     imagen: '',
+    categoria: '',
   });
   const [categorias, setCategorias] = useState([]);
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('');
+  const [opcionSeleccionada, setOpcionSeleccionada] = useState('');
 
   useEffect(() => {
     const obtenerProducto = async () => {
@@ -35,6 +38,7 @@ const EditarProducto = ({ userId, productId }) => {
           idVendedor: producto.idVendedor || userId,
           cantidadDisponible: producto.cantidadDisponible,
           imagen: producto.imagen || '',
+          categoria: producto.categoria || '',
         });
         setCategoriaSeleccionada(producto.categoria || '');
       } catch (error) {
@@ -43,8 +47,7 @@ const EditarProducto = ({ userId, productId }) => {
     };
 
     obtenerProducto();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [productId, userId]);
 
   useEffect(() => {
     setCategorias([
@@ -53,6 +56,7 @@ const EditarProducto = ({ userId, productId }) => {
       'Muebles y accesorios',
       'Juguetes y juegos',
       'Accesorios de moda',
+      'Materia prima',
     ]);
   }, []);
 
@@ -67,62 +71,114 @@ const EditarProducto = ({ userId, productId }) => {
     setProductoData({ ...productoData, imagen: imagenesPorCategoria[value], categoria: value });
   };
 
+  const handleOpcionSeleccionada = (opcion) => {
+    setOpcionSeleccionada(opcion);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const precio = parseFloat(productoData.precio);
       const cantidadDisponible = parseInt(productoData.cantidadDisponible);
       const datosAEnviar = {
-        nombreProducto: productoData.nombreProducto,
-        descripcion: productoData.descripcion,
+        ...productoData,
         precio: isNaN(precio) ? 0 : precio,
-        categoria: categoriaSeleccionada,
-        estado: productoData.estado,
-        idVendedor: userId,
         cantidadDisponible: isNaN(cantidadDisponible) ? 0 : cantidadDisponible,
-        imagen: productoData.imagen,
       };
       const response = await axios.patch(`http://localhost:3000/products/${productId}`, datosAEnviar);
-
       console.log('Producto actualizado:', response.data);
+      onClose(); // Cierra el modal después de actualizar
     } catch (error) {
       console.error('Error al actualizar el producto:', error);
     }
   };
 
   return (
-    <div>
-      <h2>Actualizar Producto</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Nombre del Producto:</label>
-          <input type="text" name="nombreProducto" value={productoData.nombreProducto} onChange={handleChange} />
+    <div className='ContentP01'>
+      <div className='ContentText1'>
+        <h2 className="Tittle1">Actualizar Producto</h2>
+      </div>
+      
+      <div className="SelectOption1">
+        <button className='SelectOptionPA' onClick={() => handleOpcionSeleccionada('nombreProducto')}>Nombre del Producto</button>
+        <button className='SelectOptionPA' onClick={() => handleOpcionSeleccionada('descripcion')}>Descripción</button>
+        <button className='SelectOptionPA' onClick={() => handleOpcionSeleccionada('precio')}>Precio</button>
+        <button className='SelectOptionPA' onClick={() => handleOpcionSeleccionada('estado')}>Estado</button>
+        <button className='SelectOptionPA' onClick={() => handleOpcionSeleccionada('cantidadDisponible')}>Cantidad Disponible</button>
+        <button className='SelectOptionPA' onClick={() => handleOpcionSeleccionada('categoria')}>Categoría</button>
+      </div>
+
+      {opcionSeleccionada === 'nombreProducto' && (
+        <div className='CenterInput'>
+          <div className='LabelC'> <label>Nombre del Producto:</label></div>
+          
+          <input
+            className="RecuadroActP"
+            type="text"
+            name="nombreProducto"
+            value={productoData.nombreProducto}
+            onChange={handleChange}
+          />
         </div>
-        <div>
+      )}
+      {opcionSeleccionada === 'descripcion' && (
+        <div className='CenterInput'>
           <label>Descripción:</label>
-          <textarea name="descripcion" value={productoData.descripcion} onChange={handleChange} />
+          <textarea
+            className="RecuadroActPD"
+            name="descripcion"
+            value={productoData.descripcion}
+            onChange={handleChange}
+          />
         </div>
-        <div>
-          <label>Precio:</label>
-          <input type="number" name="precio" value={productoData.precio} onChange={handleChange} />
+      )}
+      {opcionSeleccionada === 'precio' && (
+        <div className='CenterInput'>
+          <div className='LabelC'> <label>Precio:</label></div>
+          <input
+            className="RecuadroActP"
+            type="number"
+            name="precio"
+            value={productoData.precio}
+            onChange={handleChange}
+          />
         </div>
-        <div>
-          <label>Estado:</label>
-          <input type="text" name="estado" value={productoData.estado} onChange={handleChange} />
+      )}
+      {opcionSeleccionada === 'estado' && (
+        <div className='CenterInput'>
+          <div className='LabelC'><label>Estado:</label></div>
+          
+          <select
+            className="RecuadroActP"
+            name="estado"
+            value={productoData.estado}
+            onChange={handleChange}
+          >
+            <option value="disponible">Disponible</option>
+            <option value="vendido">Vendido</option>
+            <option value="reservado">Reservado</option>
+          </select>
         </div>
-        <div>
-          <label>ID del Vendedor:</label>
-          <input type="number" name="idVendedor" value={productoData.idVendedor} onChange={handleChange} readOnly />
+      )}
+      {opcionSeleccionada === 'cantidadDisponible' && (
+        <div className='CenterInput'>
+          <div className='LabelC'><label >Cantidad Disponible:</label></div>
+          <input
+            className="RecuadroActP"
+            type="number"
+            name="cantidadDisponible"
+            value={productoData.cantidadDisponible}
+            onChange={handleChange}
+          />
         </div>
-        <div>
-          <label>Cantidad Disponible:</label>
-          <input type="number" name="cantidadDisponible" value={productoData.cantidadDisponible} onChange={handleChange} />
-        </div>
+      )}
+      {opcionSeleccionada === 'categoria' && (
         <div>
           <label>Categoría:</label>
           {categorias.map((categoria, index) => (
             <div key={index}>
               <input
+                className='CategoryCss'
                 type="radio"
                 id={`${categoria}-${index}`}
                 name="categoria"
@@ -134,8 +190,12 @@ const EditarProducto = ({ userId, productId }) => {
             </div>
           ))}
         </div>
-        <button type="submit">Actualizar</button>
-      </form>
+      )}
+      <div className="ButtonAct1">
+        <button className="ButtonAct" type="submit" onClick={handleSubmit}>
+          Actualizar
+        </button>
+      </div>
     </div>
   );
 };

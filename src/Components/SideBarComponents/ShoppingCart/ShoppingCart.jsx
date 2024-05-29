@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import DeleteIcon from "@mui/icons-material/Delete";
-import EditarProducto from "./EditarProducto"; // Suponiendo que tengas un componente para editar productos
+import EditarProducto from "./EditarProducto";
 import "./ShoppingCart.css";
 
 const ShoppingCart = ({ userId }) => {
@@ -9,18 +9,19 @@ const ShoppingCart = ({ userId }) => {
   const [mostrarEditarProducto, setMostrarEditarProducto] = useState(false);
   const [productoIdEditar, setProductoIdEditar] = useState(null);
 
+  const fetchProductos = async () => {
+    try {
+      const response = await axios.get('http://localhost:3000/products');
+      console.log('Datos recibidos del servidor:', response.data);
+      const productosDelUsuario = response.data.filter(producto => producto.vendedor && producto.vendedor.id === userId);
+      console.log('Productos filtrados del usuario:', productosDelUsuario);
+      setProductos(productosDelUsuario);
+    } catch (error) {
+      console.error('Error al obtener los productos:', error);
+    }
+  };
+
   useEffect(() => {
-    const fetchProductos = async () => {
-      try {
-        const response = await axios.get('http://localhost:3000/products');
-        console.log('Datos recibidos del servidor:', response.data); // Muestra todos los datos recibidos
-        const productosDelUsuario = response.data.filter(producto => producto.vendedor && producto.vendedor.id === userId);
-        console.log('Productos filtrados del usuario:', productosDelUsuario); // Muestra los datos filtrados
-        setProductos(productosDelUsuario);
-      } catch (error) {
-        console.error('Error al obtener los productos:', error);
-      }
-    };
     fetchProductos();
   }, [userId]);
 
@@ -41,12 +42,13 @@ const ShoppingCart = ({ userId }) => {
 
   const handleCloseEditarProducto = () => {
     setMostrarEditarProducto(false);
+    fetchProductos();  // Actualiza la lista de productos después de cerrar el modal
   };
 
   return (
     <div className="ShoppingCart-container">
       <div className="ShoppingCart-content">
-        <h2>Lista de Productos del Usuario</h2>
+        <h2>Mis productos</h2>
         <div className="ShoppingTable-container">
           <table className="ShoppingTable">
             <thead>
@@ -93,12 +95,15 @@ const ShoppingCart = ({ userId }) => {
       </div>
 
       {mostrarEditarProducto && (
-        <div className="ShoppingModal">
-          <div className="ShoppingModal-content">
-            <span className="ShoppingClose" onClick={handleCloseEditarProducto}>
-              &times;
-            </span>
+        <div className="ProductModal">
+          <div className="ProductModal-content">
+            <div className="ProductBotton">
+              <span className="ProductClose" onClick={handleCloseEditarProducto}>
+                &times;
+              </span>
+            </div>
             <EditarProducto
+              userId={userId}
               productId={productoIdEditar}
               onClose={handleCloseEditarProducto}
             />

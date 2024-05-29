@@ -1,0 +1,96 @@
+
+.RecuadroActP{
+    position:absolute;
+    display: flex;
+    width: 45%;
+    height: 7%;
+    margin-left:40%;
+    margin-bottom: 15px;
+    border: 1px solid #ddd; /* Cambiado a un color más claro */
+    border-radius: 10px;   
+}
+.RecuadroActPD{
+    position:absolute;
+    display: flex;
+    width: 60%;
+    height: 20%;
+    margin-left:25%;
+    margin-right: 0%;
+    margin-bottom: 15px;
+       
+}
+.SelectOptionPA{
+    margin-bottom: 5px;
+    width: 150px; /* Ajusta el valor según tus necesidades */
+    height: 30px; /* Ajusta el valor según tus necesidades */
+    background-color: white; /* Color de fondo de los botones */
+    color: #000000; /* Color del texto de los botones */
+    cursor: pointer;
+}
+.ContentText1{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+ 
+    margin-top: 0px;
+    
+}
+
+.Tittle1{
+    text-align: center; 
+    margin-top: 0%;
+    margin-bottom: 20px; 
+}
+.SelectOption1{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+.ContentP01{
+ 
+}
+   
+.ButtonAct1{
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+   
+ 
+    
+}
+
+.ButtonAct{
+
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.CenterInput{
+    display: flex;
+    margin-top: 10%;
+    margin-left: 8%;
+    width: 100%;
+   
+    
+}
+.LabelC{
+    margin-top:2%;
+    
+}
+.CategoryCss{
+    cursor: pointer;
+}

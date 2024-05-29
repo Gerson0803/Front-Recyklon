@@ -1,0 +1,25 @@
+.dots-container {
+  width: 100%; /* Ocupa todo el ancho */
+  display: flex;
+  justify-content: center;
+  margin-top: 10px; /* Ajusta según sea necesario */
+}
+
+.dots-buttons {
+  width: 70%; /* Ocupa el 70% del ancho del contenedor */
+  display: flex;
+  justify-content: center;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #FFF;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #FFD700;
+}

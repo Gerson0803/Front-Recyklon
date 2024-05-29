@@ -2,7 +2,7 @@
 .principal {
   display: flex;
   height: 100vh;
-  width: 100vw;
+  width: 100vw; 
 }
 
 .principal-main {
@@ -16,4 +16,8 @@
   flex-grow: 1;
   overflow-y: auto; /* Scroll independiente para el contenido principal */
   padding: 20px;
+}
+/* Principal.css */
+.principal-container {
+  border: 2px solid black; /* Puedes ajustar el grosor y el color del borde según tus preferencias */
 }
