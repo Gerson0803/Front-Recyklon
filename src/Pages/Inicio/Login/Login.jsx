@@ -1,22 +1,22 @@
-    // Login.js
-    import React from 'react';
+import React from 'react';
+import './Login.css';
+import LoginForm from './LoginForm';
+import Imagen from './Oficial.jpg';
+import User from './User.png';
 
-    import './Login.css';
-    import LoginForm from './LoginForm';
-
-    function Login() {
-        return (
-            <div className="login-principal">
-                <div className="login-container-left"></div>
-                <div className="login-container-right">
-                    <div className="login-container-form">
-                        <div className="login-container-content">
-                            <LoginForm/>
-                        </div>
-                    </div>
+function Login() {
+    return (
+        <div className="login-principal">
+            <div className="login-division">
+                <div className="login-division-left">
+                    <img src={Imagen} alt="Carrito" className="login-img" />
+                </div>
+                <div className="login-division-right">
+                    <LoginForm userImage={User} />
                 </div>
             </div>
-        );
-    }
+        </div>
+    );
+}
 
-    export default Login;
+export default Login;

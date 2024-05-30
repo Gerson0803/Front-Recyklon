@@ -30,18 +30,16 @@ function SignUp() {
         <div className="Mateo">
           <div className="Carlos">
             { <LogoSection/> }
-            <p className="decorado">Hola</p>
-            <div className="button-section">
-              <GoogleButton />
-            </div>
+         
             <div>
               {/* Pasa la función updateUserData como prop al componente SignUpForm */}
               <SignUpForm setUserData={updateUserData} onRegistrationSuccess={handleRegistrationSuccess} />
             </div>
           </div>
         </div>
-      </div>
+      
       <div className="Blanco"></div>
+    </div>
     </div>
   );
 }

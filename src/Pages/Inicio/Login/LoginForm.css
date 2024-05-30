@@ -1,109 +1,85 @@
-/* LoginForm.css */
+/* Importar Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 .loginform-container {
     /* Estilos para el contenedor principal */
-    width: 100%;
+    width: 80%;
     height: 100%;
     display: flex;
+    justify-content: space-around;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     text-align: center;
-    
-    
-}
-.lines-decoration{
-    position: relative;
-    font-size: 15px;
-    
-}
-.lines-decoration::after,.lines-decoration::before{
-    content:"";
-    position: absolute;
-    width: 20%;
-    height: 1px;
-    background-color:#EE8C45;
-    top: 0.6em;
-}
-.lines-decoration::before{
-    left: 10%;
-}
-.lines-decoration::after{
-    right: 10%;
-}
-.header-section {
-    
-    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+
 }
 
-.greeting-section {
-    width: 100%;
-    height: auto;
-    
+.header-section {
+    margin-bottom: 20px;
+}
+
+.user-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
 }
 
 .greeting-text {
-    /* Estilos para el texto de saludo */
-   
-}
-
-.google-button-section {
-    /* Estilos para la sección del botón de Google */
-    
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
 }
 
 .form-section {
-    /* Estilos para la sección del formulario */
-    display: flex;
-    flex-direction: column;
-    height: 60%;
-    justify-content: space-evenly;
+    width: 100%;
 }
 
 .input-group {
-    /* Estilos para el grupo de entrada */
+    margin-bottom: 20px;
 }
 
 .label {
-    /* Estilos para la etiqueta del campo de entrada */
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .input {
-    /* Estilos para el campo de entrada */
-    
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
 }
 
-/* LoginForm.css */
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+}
 
-/* Estilos para pantallas más pequeñas */
-@media screen and (max-width: 1077px) {
-    .loginform-container{
-        width: 100%;
-    }
-    .input-group {
-        /* Estilos para el grupo de entrada */
-        width: 70%;
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
 
-    }
-    .lines-decoration::after,
-    .lines-decoration::before {
-        width: 15%; /* Reducir el ancho de las líneas de decoración */
-    }
+a:hover {
+    text-decoration: underline;
+}
 
-    .header-section {
-        margin-bottom: 2px; /* Reducir el margen inferior del encabezado */
-    }
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
 
-    form{
-      
-        width: auto;    
-    }
-  
-        .label {
-        font-size: 14px; /* Reducir el tamaño de la fuente de las etiquetas */
-       
-    }
-    .input{
-        background-color: goldenrod;
-    }
+button:hover {
+    background-color: #218838;
 }

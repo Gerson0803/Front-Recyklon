@@ -53,6 +53,7 @@ const SignUpForm = ({ setUserData }) => {
                 <div className="input-group">
                     <label htmlFor="nombre">Nombre:</label>
                     <input
+                        className='InputOf'
                         type="text"
                         id="nombre"
                         name="nombre"
@@ -64,6 +65,7 @@ const SignUpForm = ({ setUserData }) => {
                 <div className="input-group">
                     <label htmlFor="apellido">Apellido:</label>
                     <input
+                        className='InputOf'
                         type="text"
                         id="apellido"
                         name="apellido"
@@ -75,6 +77,7 @@ const SignUpForm = ({ setUserData }) => {
                 <div className="input-group">
                     <label htmlFor="correo">Correo:</label>
                     <input
+                        className='InputOf'
                         type="email"
                         id="correo"
                         name="correo"
@@ -86,6 +89,7 @@ const SignUpForm = ({ setUserData }) => {
                 <div className="input-group">
                     <label htmlFor="contraseña">Contraseña:</label>
                     <input
+                        className='InputOf'
                         type="password"
                         id="contraseña"
                         name="contraseña"
@@ -97,6 +101,7 @@ const SignUpForm = ({ setUserData }) => {
                 <div className="input-group">
                     <label htmlFor="contacto">Contacto:</label>
                     <input
+                        className='InputOf'
                         type="text"
                         id="contacto"
                         name="contacto"

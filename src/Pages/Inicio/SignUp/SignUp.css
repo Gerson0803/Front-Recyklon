@@ -16,40 +16,52 @@ body {
   display: flex;
   width: 100%;
   height: 100%;
-  padding: 0;
-  margin: 0;
-  border: 0;
+  background: linear-gradient( #164a41 , #9DC88D );
+ 
 
 }
 .Supe {
-  width: 40%;
-  height: 100%;
+  
+  margin-right: 10%;
+  margin-left: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%; /* Ajusta el ancho según tu preferencia */
+  height: 100vh;
+  
 }
 .Blanco {
-  width: 80%;
-  background-image: url(../../../ocg-saving-the-ocean-TD1oGnkpQ0E-unsplash.jpg); 
-  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
-  background-position: left; /* Centra la imagen en el contenedor */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
  
+  width: 40%;
+  height: 85%;
+   /* 30% del ancho de la ventana */
+  background-image: url(../../../ImgSig.jpg); 
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+  background-position: center; /* Centra la imagen en el contenedor */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+
 }
+
+
 
 .Mateo {
   display: flex;
-  width: 60%;
+  width: 40%;
   height: 85%;
-  
   justify-content: center;
   align-items: center;
-  
-  border-radius: 30px;
-  box-shadow: 0px 4px 4px 4px rgba(0.5, 0.5, 0.5, 0.5);
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background-color: aliceblue;
   
 }
 .Carlos {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 100%;
   height: 100%;
   align-items: center;
   justify-content: center;
@@ -79,29 +91,13 @@ h1{
     justify-content: center;
     align-items: center;
   }
-  .Supe {
-    width: 100%;
-    height: auto;
-  }
   .Blanco {
     display: none; /* Oculta el contenedor con la imagen de fondo en pantallas pequeñas */
     
   }
-  .Mateo {
-    width: 100%;
-    height: auto;
-
-  }
+  
 }
 
-.Supe {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80%; /* Ajusta el ancho según tu preferencia */
-  height: 100vh;
-
-}
 
 
 

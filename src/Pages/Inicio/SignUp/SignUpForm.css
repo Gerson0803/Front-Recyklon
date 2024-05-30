@@ -1,29 +1,32 @@
 .container {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
+  width: 100%;
+  height: 100%;
+  
 }
 
 .input-group {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .input-group label {
-  display: block;
+  
   margin-bottom: 5px;
 }
 
-.input-group input,
-.input-group select {
+
+.input-group input{
   width: 100%;
-  padding: 10px;
-  border: 2px solid #EE8C45;
+  margin-top: 5px;
+  border: 2px solid #164a41;
   border-radius: 5px;
+  height: 30px; /* Altura que desees */
 }
 
+
 .button {
-  display: inline-block;
-  background-color: #EE8C45;
+  display: flex;
+  margin-left: 65px;
+  background-color: #164a41;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -33,7 +36,7 @@
 }
 
 .button:hover {
-  background-color: #ff9f6e;
+  background-color: #36756b;
 }
 
 .small-text {
@@ -50,4 +53,18 @@
   .container{
     width: 100%;
   }
+}
+.radio-group {
+  display: flex; /* Para que los elementos sean flexibles */
+  align-items: center; /* Para centrar verticalmente los elementos */
+}
+
+.radio-group label {
+  margin-right: 15px; /* Espacio entre los botones */
+  display: flex; /* Para alinear el contenido */
+  align-items: center; /* Para centrar verticalmente */
+}
+
+.radio-group input[type="radio"] {
+  margin-right: 5px; /* Espacio entre el input y el label */
 }

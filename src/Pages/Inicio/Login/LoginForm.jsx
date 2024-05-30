@@ -3,9 +3,9 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import LogoSection from '../../../../src/Logo';
 import Button from '../../../../src/Components/Button/Button';
-import GoogleButton from '../../../BotonGoogle';
+import "./LoginForm.css";
 
-const LoginForm = () => {
+const LoginForm = ({ userImage }) => {
     const [correo, setCorreo] = useState('');
     const [contraseña, setContraseña] = useState('');
     const [error, setError] = useState(null);
@@ -43,13 +43,10 @@ const LoginForm = () => {
     return (
         <div className="loginform-container">
             <div className="header-section">
-                <LogoSection />
-            </div>
-            <div className="greeting-section">
+                <img src={userImage} alt="User" className="user-img" />
                 <p className="greeting-text">Welcome please login to your account</p>
-                <GoogleButton />
-                <h2 className='lines-decoration'>Login other accounts</h2>
             </div>
+            <div className="greeting-section"></div>
             <div className="form-section">
                 <form onSubmit={handleSubmit}>
                     <div className="input-group">
@@ -84,6 +81,7 @@ const LoginForm = () => {
                     <Button type="submit" texto={"Iniciar sesión"} />
                 </form>
                 <p>You don't have an account? <a href="#">Sign Up</a></p>
+                <LogoSection />
             </div>
         </div>
     );
