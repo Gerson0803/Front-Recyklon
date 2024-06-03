@@ -1,4 +1,3 @@
-// JSX
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "./CrearProductos.css"
@@ -39,10 +38,9 @@ const FormularioProducto = ({ userId }) => {
     setProductoData({ ...productoData, [name]: value });
   };
 
-  const handleCategoriaChange = (e) => {
-    const { value } = e.target;
-    setCategoriaSeleccionada(value);
-    setProductoData({ ...productoData, imagen: imagenesPorCategoria[value] });
+  const handleCategoriaChange = (categoria) => {
+    setCategoriaSeleccionada(categoria);
+    setProductoData({ ...productoData, imagen: imagenesPorCategoria[categoria] });
   };
 
   const handleSubmit = async (e) => {
@@ -74,45 +72,39 @@ const FormularioProducto = ({ userId }) => {
       <div className="FormularioProducto-content">
         <h2>Crear Nuevo Producto</h2>
         <form onSubmit={handleSubmit} className="FormularioProducto-form">
-          <div>
+          <div className="form-group">
             <label>Nombre del Producto:</label>
             <input type="text" name="nombreProducto" value={productoData.nombreProducto} onChange={handleChange} />
           </div>
-          <div>
+          <div className="form-group">
             <label>Descripción:</label>
             <textarea name="descripcion" value={productoData.descripcion} onChange={handleChange} />
           </div>
-          <div>
+          <div className="form-group">
             <label>Precio:</label>
             <input type="number" name="precio" value={productoData.precio} onChange={handleChange} />
           </div>
-          <div>
+          <div className="form-group">
             <label>Estado:</label>
             <input type="text" name="estado" value={productoData.estado} onChange={handleChange} />
           </div>
-          <div>
-            <label>ID del Vendedor:</label>
-            <input type="number" name="idVendedor" value={productoData.idVendedor} onChange={handleChange} readOnly />
-          </div>
-          <div>
+          <div className="form-group">
             <label>Cantidad Disponible:</label>
             <input type="number" name="cantidadDisponible" value={productoData.cantidadDisponible} onChange={handleChange} />
           </div>
-          <div>
+          <div className="form-group categoria-group">
             <label>Categoría:</label>
-            {categorias.map((categoria, index) => (
-              <div key={index}>
-                <input
-                  type="radio"
-                  id={`categoria-${index}`}
-                  name="categoria"
-                  value={categoria}
-                  checked={categoria === categoriaSeleccionada}
-                  onChange={handleCategoriaChange}
-                />
-                <label htmlFor={`categoria-${index}`}>{categoria}</label>
-              </div>
-            ))}
+            <div className="categoria-grid">
+              {categorias.map((categoria, index) => (
+                <div
+                  key={index}
+                  className={`categoria-item ${categoria === categoriaSeleccionada ? 'selected' : ''}`}
+                  onClick={() => handleCategoriaChange(categoria)}
+                >
+                  {categoria}
+                </div>
+              ))}
+            </div>
           </div>
           <button type="submit">Crear Producto</button>
         </form>

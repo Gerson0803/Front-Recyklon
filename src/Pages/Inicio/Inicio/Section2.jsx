@@ -1,16 +1,15 @@
+// Section2.js
+
 import React from "react";
-import bottle from "./pngegg.png"; // Asegúrate de tener la imagen correcta para la sección 2
-import "./Section.css";
+import "./Section2.css";
 
 const Section2Left = () => {
   return (
-    <div className="section-left-side">
-      <div className="section-text-container">
-        <h1 className="section-recyklon-text">RECYKLON 2</h1>
-        <p className="section-subtitle">Donde tu ayuda cuenta más</p>
-        <p className="section-description">
-          Descripción de la sección 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
+    <div className="section2-left-side">
+      <div className="section2-one"></div>
+      <div className="section2-division">
+        <div className="section2-inner-one"></div>
+        <div className="section2-inner-two"></div>
       </div>
     </div>
   );
@@ -18,10 +17,26 @@ const Section2Left = () => {
 
 const Section2Right = () => {
   return (
-    <div className="section-right-side">
-      <img src={bottle} alt="Section 2" className="section-hoja-image" />
+    <div className="section2-right-side">
+      <div className="section2-right-division">
+        <div className="section2-inner-one"></div>
+        <div className="section2-inner-two"></div>
+        <div className="section2-inner-three"></div>
+        <div className="section2-inner-four"></div>
+      </div>
     </div>
   );
 };
 
-export { Section2Left, Section2Right };
+const Section2 = () => {
+  return (
+    <div className="section2-contenido-principal">
+      <div className="section2-division-container">
+        <Section2Left />
+        <Section2Right />
+      </div>
+    </div>
+  );
+};
+
+export { Section2Left, Section2Right, Section2 };

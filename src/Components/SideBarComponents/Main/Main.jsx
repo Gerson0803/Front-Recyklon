@@ -1,4 +1,3 @@
-// Inicio.jsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ProductoCard from './ProductoCard';
@@ -13,7 +12,7 @@ function Inicio({ userId }) {
     const fetchProductos = async () => {
       try {
         const response = await axios.get(`http://localhost:3000/products?userId=${userId}`);
-        console.log('Productos recibidos:', response.data); // Debug
+        console.log('Productos recibidos:', response.data);
         setProductos(response.data);
       } catch (error) {
         setError('Error al obtener los productos');
@@ -40,7 +39,7 @@ function Inicio({ userId }) {
       {error && <p className="error">{error}</p>}
       <div className="producto-actual">
         {productos.length > 0 ? (
-          <ProductoCard producto={productos[indiceProductoActual]} isGrande />
+          <ProductoCard producto={productos[indiceProductoActual]} isPrimero />
         ) : (
           <p>No hay productos disponibles</p>
         )}
@@ -48,7 +47,7 @@ function Inicio({ userId }) {
       <h2>Productos</h2>
       <div className="todos-los-productos">
         {productos.map((producto, index) => (
-          <ProductoCard key={producto.id} producto={producto} isGrande={index === indiceProductoActual} />
+          <ProductoCard key={producto.id} producto={producto} isPrimero={index === indiceProductoActual} />
         ))}
       </div>
     </div>

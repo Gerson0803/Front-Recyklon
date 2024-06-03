@@ -1,14 +1,16 @@
-/* SideBar.css */
 .sidebar-menu_content {
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
-  width: 20%; /* Ajusta el ancho del sidebar según tus necesidades */
-  background-color: #fff; /* Fondo blanco para el sidebar */
-  z-index: 1000; /* Asegura que el sidebar esté por encima del contenido */
-  overflow-y: auto; /* Permite desplazamiento vertical si el contenido es demasiado largo */
+  width: 20%;
+  z-index: 1000;
+  overflow-y: auto;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  display: flex;
+  background-color: rgba(157, 200, 141, 1);
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .sidebar-user_container {
@@ -23,6 +25,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .sidebar-elemento {
@@ -31,15 +35,86 @@
   padding: 10px;
   cursor: pointer;
   width: 100%;
+  margin-bottom: 20px;
+  column-gap: 10px;
+  position: relative;
 }
 
-.sidebar-elemento:hover,
-.sidebar-elemento.selected {
-  color: #FFA500;
-  background-color: rgba(255, 165, 0, 0.1);
+.sidebar-elemento::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 10px;
+  background-color: transparent;
+  transition: background-color 0.3s;
+}
+
+.sidebar-elemento:hover::before,
+.sidebar-elemento.selected::before {
+  background-color: #FFFF;
 }
 
 .sidebar-division {
-  margin-right: 10px;
-  
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-elementos h3 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar-final {
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.logout-button {
+  margin-top: 20px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #c0392b;
+}
+
+.logout-confirmation {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logout-confirmation p {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.logout-confirmation button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logout-confirmation button:hover {
+  background-color: #2980b9;
 }

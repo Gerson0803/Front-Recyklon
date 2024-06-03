@@ -1,0 +1,93 @@
+/* Section2.css */
+
+.section2-contenido-principal {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .section2-recyklon-text {
+    font-size: 10rem;
+    font-weight: 900;
+    font-family: 'Anton', sans-serif;
+    color: #fff;
+  }
+  
+  .section2-subtitle {
+    font-size: 1.5rem;
+    font-family: 'Poetsen One', sans-serif;
+    color: #fff;
+  }
+  
+  .section2-description {
+    font-size: 1rem;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+  }
+  
+  .section2-division-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Estilos para el lado izquierdo de Section2 */
+  .section2-left-side {
+    width: 95%;
+    height: 75%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(173, 122, 122); /* Fondo rojo */
+  }
+  
+  .section2-one {
+    background-color: rebeccapurple;
+    width: 50%;
+    height: 100%;
+  }
+  
+  .section2-division {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    width: 50%;
+    height: 100%;
+  }
+  
+  .section2-inner-one,
+  .section2-inner-two {
+    flex: 1;
+    background-color: lightgreen;
+    margin: 10px; /* Para dar espacio entre los divs internos */
+  }
+  
+  /* Estilos para el lado derecho de Section2 */
+  .section2-right-side {
+    width: 90%;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue; /* Fondo azul */
+  }
+  
+  .section2-right-division {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .section2-right-division > div {
+    flex: 1 1 45%; /* Cada div ocupará aproximadamente el 45% del ancho */
+    background-color: lightcoral;
+    margin: 10px;
+    height: 45%; /* Altura ajustada para mantener la proporción */
+  }
+  

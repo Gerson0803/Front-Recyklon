@@ -1,52 +1,110 @@
-/* CSS */
+/* CrearProductos.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+}
+
 .FormularioProducto-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f9f9f9;
-  }
-  
-  .FormularioProducto-content {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .FormularioProducto-form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  
-  .FormularioProducto-form label {
-    font-weight: bold;
-  }
-  
-  .FormularioProducto-form input[type="text"],
-  .FormularioProducto-form input[type="number"],
-  .FormularioProducto-form textarea {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .FormularioProducto-form textarea {
-    height: 100px;
-  }
-  
-  .FormularioProducto-form button {
-    padding: 10px 20px;
-    background-color: #4caf50;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .FormularioProducto-form button:hover {
-    background-color: #45a049;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f2f5;
+}
+
+.FormularioProducto-content {
+  width: 80%;
+  max-width: 600px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.FormularioProducto-content h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.FormularioProducto-form .form-group {
+  margin-bottom: 15px;
+}
+
+.FormularioProducto-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.FormularioProducto-form input[type="text"],
+.FormularioProducto-form input[type="number"],
+.FormularioProducto-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+.FormularioProducto-form input[type="text"]:focus,
+.FormularioProducto-form input[type="number"]:focus,
+.FormularioProducto-form textarea:focus {
+  border-color: #4caf50;
+}
+
+.FormularioProducto-form textarea {
+  resize: vertical;
+}
+
+.categoria-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.categoria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.categoria-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  background-color: #e0e0e0;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.categoria-item:hover {
+  background-color: #d0d0d0;
+  transform: scale(1.05);
+}
+
+.categoria-item.selected {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.FormularioProducto-form button {
+  width: 100%;
+  padding: 15px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.FormularioProducto-form button:hover {
+  background-color: #45a049;
+}
