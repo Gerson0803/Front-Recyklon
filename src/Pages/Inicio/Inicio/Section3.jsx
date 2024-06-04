@@ -1,16 +1,32 @@
 import React from "react";
-import bottle from "./pngegg.png"; // Asegúrate de tener la imagen correcta para la sección 3
-import "./Section.css";
+import "./Section3.css";
+import bottle from "./hoja.png";
+import developerImage from "../Login/User.png";
 
 const Section3Left = () => {
   return (
-    <div className="section-left-side">
-      <div className="section-text-container">
-        <h1 className="section-recyklon-text">RECYKLON 3</h1>
-        <p className="section-subtitle">Donde tu ayuda cuenta aún más</p>
-        <p className="section-description">
-          Descripción de la sección 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
+    <div className="section3-contenido-principal">
+      <div className="section3-division-container">
+        
+        <div className="section-right-side">
+          <div className="section-text-container">
+            <div className="developer-info" style={{ backgroundColor: "#8B6914" }}>
+              <img src={developerImage} alt="Desarrollador" className="developer-image" />
+              <h2>Darly</h2>
+              <p>Rol: Desarrollador Back-end</p>
+            </div>
+            <div className="developer-info" style={{ backgroundColor: "#8B6914" }}>
+              <img src={developerImage} alt="Desarrollador" className="developer-image" />
+              <h2>Mateo</h2>
+              <p>Rol: Desarrollador Front-end</p>
+            </div>
+            <div className="developer-info" style={{ backgroundColor: "#8B6914" }}>
+              <img src={developerImage} alt="Desarrollador" className="developer-image" />
+              <h2>Gerson</h2>
+              <p>Rol: Desarrollador Front-end</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -19,7 +35,7 @@ const Section3Left = () => {
 const Section3Right = () => {
   return (
     <div className="section-right-side">
-      <img src={bottle} alt="Section 3" className="section-hoja-image" />
+      <img src={bottle} alt="Section 1" className="section-hoja-image" />
     </div>
   );
 };

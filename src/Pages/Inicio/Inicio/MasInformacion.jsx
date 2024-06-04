@@ -1,16 +1,16 @@
 import React from "react";
 import "./MasInformacion.css";
-import imagePath from "./tomas-malik-CMkJ-oT4lsQ-unsplash.jpg"; // Importa la imagen
+import imagePath from "./tomas-malik-CMkJ-oT4lsQ-unsplash.jpg"; /
 
 const MasInformacion = () => {
   return (
     <div className="mas-informacion">
       <h2>Más información sobre el reciclaje</h2>
       <div className="grid-container">
-        {/* Contenedor para "¿Qué se puede reciclar?" */}
+       
         <div className="contenedor-verde grande">
           <h3>¿Qué se puede reciclar?</h3>
-          {/* Contenedor para cada sección */}
+          
           <div className="content-wrapper">
             <div className="text-content">
               <h4>Parte 1</h4>
@@ -23,7 +23,7 @@ const MasInformacion = () => {
               <img src={imagePath} alt="Reciclaje Parte 1" />
             </div>
           </div>
-          {/* Contenedor para cada sección */}
+          
           <div className="content-wrapper">
             <div className="text-content">
               <h4>Parte 2</h4>
@@ -36,7 +36,7 @@ const MasInformacion = () => {
               <img src={imagePath} alt="Reciclaje Parte 2" />
             </div>
           </div>
-          {/* Contenedor para cada sección */}
+          
           <div className="content-wrapper">
             <div className="text-content">
               <h4>Parte 3</h4>
@@ -50,10 +50,10 @@ const MasInformacion = () => {
             </div>
           </div>
         </div>
-        {/* Contenedor para "Consejos para reciclar en casa" */}
+    
         <div className="contenedor-verde grande">
           <h3>Consejos para reciclar en casa</h3>
-          {/* Contenedor para cada sección */}
+         
           <div className="content-wrapper">
             <div className="text-content">
               <h4>Parte 1</h4>
@@ -65,7 +65,7 @@ const MasInformacion = () => {
               <img src={imagePath} alt="Consejos Parte 1" />
             </div>
           </div>
-          {/* Contenedor para cada sección */}
+          
           <div className="content-wrapper">
             <div className="text-content">
               <h4>Parte 2</h4>
@@ -77,7 +77,7 @@ const MasInformacion = () => {
               <img src={imagePath} alt="Consejos Parte 2" />
             </div>
           </div>
-          {/* Contenedor para cada sección */}
+          
           <div className="content-wrapper">
             <div className="text-content">
               <h4>Parte 3</h4>
@@ -89,7 +89,7 @@ const MasInformacion = () => {
               <img src={imagePath} alt="Consejos Parte 3" />
             </div>
           </div>
-          {/* Contenedor para cada sección */}
+          
           <div className="content-wrapper">
             <div className="text-content">
               <h4>Parte 4</h4>

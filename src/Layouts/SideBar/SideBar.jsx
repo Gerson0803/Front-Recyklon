@@ -27,7 +27,7 @@ const SideBar = ({ nombre, onSidebarItemClick }) => {
 
   const confirmLogout = () => {
     localStorage.removeItem('userData');
-    window.location.href = '/'; // Redirige a la página de inicio o a la página de login
+    window.location.href = '/'; 
   };
 
   return (
@@ -85,7 +85,6 @@ const SideBar = ({ nombre, onSidebarItemClick }) => {
         </div>
       </div>
       <div className="sidebar-final">
-        <p>Final Content</p>
         <button className="logout-button" onClick={() => handleLogout()}>
           <FontAwesomeIcon icon={faSignOutAlt} />
           Logout

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './UpDate.css';
 
-// Componente Modal de Confirmación
+
 const ConfirmationModal = ({ message, onConfirm, onCancel }) => {
   return (
     <div className="modal-overlay">
@@ -17,7 +17,6 @@ const ConfirmationModal = ({ message, onConfirm, onCancel }) => {
   );
 };
 
-// Componente UpdateUserComponent
 const UpdateUserComponent = () => {
   const [userData, setUserData] = useState(
     JSON.parse(localStorage.getItem('userData')) || {
@@ -33,20 +32,18 @@ const UpdateUserComponent = () => {
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    // Actualiza el estado local si cambia el localStorage
+    
     const storedUserData = JSON.parse(localStorage.getItem('userData'));
     if (storedUserData) {
       setUserData(storedUserData);
     }
 
-    // Añadir o quitar la clase de fondo gris al body
     if (showModal) {
       document.body.classList.add('modal-active');
     } else {
       document.body.classList.remove('modal-active');
     }
 
-    // Limpiar la clase del body cuando el componente se desmonte
     return () => {
       document.body.classList.remove('modal-active');
     };
@@ -59,12 +56,12 @@ const UpdateUserComponent = () => {
 
   const updateUser = async () => {
     try {
-      const userId = JSON.parse(localStorage.getItem('userData')).id; // Obtiene el ID del usuario del localStorage
-      await axios.patch(`http://localhost:3000/users/${userId}`, userData); // Utiliza el ID del usuario en la solicitud PATCH
-      localStorage.setItem('userData', JSON.stringify(userData)); // Actualiza los datos en el almacenamiento local
+      const userId = JSON.parse(localStorage.getItem('userData')).id;
+      await axios.patch(`http://localhost:3000/users/${userId}`, userData); 
+      localStorage.setItem('userData', JSON.stringify(userData)); 
       console.log('Usuario actualizado:', userData);
       alert('Usuario actualizado con éxito.');
-      window.location.reload(); // Recarga la página
+      window.location.reload();
     } catch (error) {
       console.error('Error al actualizar el usuario:', error);
       alert('Hubo un error al actualizar el usuario. Por favor, inténtalo de nuevo.');

@@ -42,7 +42,7 @@ const ShoppingCart = ({ userId }) => {
 
   const handleCloseEditarProducto = () => {
     setMostrarEditarProducto(false);
-    fetchProductos();  // Actualiza la lista de productos después de cerrar el modal
+    fetchProductos();  
   };
 
   return (

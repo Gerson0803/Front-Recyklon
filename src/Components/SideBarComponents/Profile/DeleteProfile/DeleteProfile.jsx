@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './DeleteProfile.css';
 
-// Componente Modal de Confirmación
+
 const ConfirmationModal = ({ message, onConfirm, onCancel }) => {
   return (
     <div className="modal-overlay">
@@ -17,9 +17,9 @@ const ConfirmationModal = ({ message, onConfirm, onCancel }) => {
   );
 };
 
-// Componente DeleteUserComponent
+
 const DeleteUserComponent = () => {
-  const userId = JSON.parse(localStorage.getItem('userData')).id; // Obtiene el ID del usuario del localStorage
+  const userId = JSON.parse(localStorage.getItem('userData')).id; 
 
   const [showModal, setShowModal] = useState(false);
 
@@ -28,7 +28,7 @@ const DeleteUserComponent = () => {
       const response = await axios.delete(`http://localhost:3000/users/${userId}`);
       console.log('Usuario eliminado:', response.data);
       alert('Usuario eliminado con éxito.');
-      window.location.href = '/'; // Redirecciona al usuario a la página de inicio
+      window.location.href = '/'; 
     } catch (error) {
       console.error('Error al eliminar el usuario:', error);
       alert('Hubo un error al eliminar el usuario. Por favor, inténtalo de nuevo.');

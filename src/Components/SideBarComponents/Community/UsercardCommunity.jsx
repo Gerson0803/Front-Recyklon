@@ -1,7 +1,7 @@
-// src/Components/UserCards/UserCards.js
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./UserCard.css"; // Asegúrate de que este archivo está en el lugar correcto
+import "./UserCard.css"; 
 
 const UserCards = () => {
   const [users, setUsers] = useState([]);

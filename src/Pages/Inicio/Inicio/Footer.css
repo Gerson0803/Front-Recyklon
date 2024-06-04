@@ -5,7 +5,7 @@
   }
   
   .footer-container {
-    width: 70%; /* Cambia esto según sea necesario */
+    width: 70%; 
     height: 200px;
     display: flex;
     justify-content: center;
@@ -14,7 +14,7 @@
   }
   
   .footer-section {
-    width: 30%; /* Cambia esto según sea necesario */
+    width: 30%; 
     height: 100%;
     display: flex;
     justify-content: center;
@@ -24,7 +24,7 @@
   }
   
   .footer-section:nth-child(1) {
-    background-color: #F1B24A; /* Color amarillo */
+    background-color: #F1B24A; 
     border-radius: 30% 0;
     flex-grow: 1;
     display: flex;
@@ -33,13 +33,13 @@
   }
   
   .footer-section:nth-child(2) {
-    background-color: #4D774E; /* Color verde */
+    background-color: #4D774E; 
     flex-grow: 1;
 
   }
   
   .footer-section:nth-child(3) {
-    background-color: #164A41; /* Color azul */
+    background-color: #164A41; 
     flex-grow: 1;
 
   }

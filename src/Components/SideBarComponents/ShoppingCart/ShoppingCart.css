@@ -1,4 +1,4 @@
-/* CSS */
+
 .ShoppingCart-container {
   display: flex;
   justify-content: center;
@@ -63,11 +63,11 @@
 }
 
 .edit-button {
-  background-color: #4caf50; /* Color verde para el botón de editar */
+  background-color: #4caf50; 
 }
 
 .delete-button {
-  background-color: #f44336; /* Color rojo para el botón de eliminar */
+  background-color: #f44336; 
 }
 
 .ProductModal {

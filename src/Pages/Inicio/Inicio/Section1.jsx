@@ -1,4 +1,4 @@
-// Section1.jsx
+
 import React from "react";
 import bottle from "./pngegg.png";
 import "./Section.css";
