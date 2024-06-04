@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import LogoSection from "../../../Logo";
 import Button from "../../../Components/Button/Button";
+import Informacion from "./Informacion"; // Importa el componente Informacion
 import "./Header.css";
 
 const Header = () => {
@@ -15,10 +16,9 @@ const Header = () => {
           <a href="#" className="active">Inicio</a>
         </li>
         <li>
-          <a href="#">Información</a>
-        </li>
-        <li>
-          <a href="#">Recursos</a>
+          <Link to="/Informacion">
+            Información
+          </Link>
         </li>
         <li>
           <Link to="/Login">

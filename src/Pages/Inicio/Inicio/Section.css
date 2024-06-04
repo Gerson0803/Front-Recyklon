@@ -30,7 +30,7 @@
   width: 100%;
   height: 100%;
 }
-/* Estilos para el lado izquierdo de Section1 */
+
 .section-left-side {
   width: 90%;
   display: flex;
@@ -42,7 +42,7 @@
   text-align: center;
 }
 
-/* Estilos para el lado derecho de Section1 */
+
 .section-right-side {
   width: 100%;
   display: flex;
@@ -56,21 +56,21 @@
 .section-hoja-image {
   max-width: 80%;
   max-height: 50%;
-  position: relative; /* Agrega esto para poder utilizar propiedades de posición */
+  position: relative; 
   filter: drop-shadow(2em 5em 20px  rgba(0,0,0,0.5));  
 }
 
 .section-hoja-image::after {
   content: "";
   position: absolute;
-  top: 100%; /* Lo colocamos debajo de la imagen */
-  left: 50%; /* Lo centramos horizontalmente */
-  transform: translateX(-50%); /* Lo centramos horizontalmente */
-  width: 80%; /* Ancho deseado */
-  height: 20px; /* Altura de la "sombra" */
-  background: rgba(0, 0, 0, 0.3); /* Color de la "sombra" */
-  border-radius: 50%; /* Borde redondeado */
-  filter: blur(10px); /* Desenfoque para simular la sombra */
+  top: 100%; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  width: 80%; 
+  height: 20px; 
+  background: rgba(0, 0, 0, 0.3); 
+  border-radius: 50%; 
+  filter: blur(10px); 
   
 }
 

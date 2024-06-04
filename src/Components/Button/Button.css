@@ -1,5 +1,5 @@
 .boton {
-    background-color: #F1B24A; /* Color amarillo */
+    background-color: #F1B24A; 
     color: white;
     border: none;
     border-radius: 20px;
@@ -7,9 +7,9 @@
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+    transition: background-color 0.3s ease; 
 }
 
 .boton:hover {
-    background-color: #FFD700; /* Color amarillo claro al pasar el mouse */
+    background-color: #FFD700; 
 }

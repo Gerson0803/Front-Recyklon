@@ -1,12 +1,12 @@
 import React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react';
-import axios from 'axios'; // Mockear axios para simular solicitudes HTTP
-import { MemoryRouter } from 'react-router-dom'; // Utilizar MemoryRouter para simular la navegación
+import axios from 'axios'; 
+import { MemoryRouter } from 'react-router-dom'; 
 import LoginForm from './LoginForm';
 
-// Mockear axios.post para simular una respuesta exitosa
+
 jest.mock('axios');
-axios.post.mockResolvedValue({ status: 201, data: { /* datos de usuario simulados */ } });
+axios.post.mockResolvedValue({ status: 201, data:  });
 
 describe('LoginForm', () => {
   it('debería manejar el inicio de sesión exitoso y redirigir al usuario al menú', async () => {
@@ -16,14 +16,14 @@ describe('LoginForm', () => {
       </MemoryRouter>
     );
 
-    // Simular entrada de usuario
+  
     fireEvent.change(getByLabelText('Correo Electronico:'), { target: { value: 'test@example.com' } });
     fireEvent.change(getByLabelText('Contraseña:'), { target: { value: 'password123' } });
 
-    // Simular envío de formulario
+   
     fireEvent.submit(getByText('Iniciar sesión'));
 
-    // Esperar a que se complete la solicitud
+    
     await waitFor(() => {
       expect(axios.post).toHaveBeenCalledWith('http://localhost:3000/auth/login', {
         correo: 'test@example.com',
@@ -31,9 +31,9 @@ describe('LoginForm', () => {
       });
     });
 
-    // Verificar que se redirija al usuario al menú
+    
     expect(window.location.pathname).toBe('/Menu');
   });
 
-  // También puedes escribir pruebas similares para manejar casos de error y mostrar mensajes de error al usuario
+  
 });

@@ -87,7 +87,7 @@ const EditarProducto = ({ userId, productId, onClose }) => {
       };
       const response = await axios.patch(`http://localhost:3000/products/${productId}`, datosAEnviar);
       console.log('Producto actualizado:', response.data);
-      onClose(); // Cierra el modal después de actualizar
+      onClose(); 
     } catch (error) {
       console.error('Error al actualizar el producto:', error);
     }

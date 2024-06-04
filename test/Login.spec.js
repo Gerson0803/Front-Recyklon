@@ -4,11 +4,7 @@ import LoginForm from "../src/Pages/Inicio/Login/LoginForm.jsx";
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 
-// Mock de useNavigate
-// jest.mock("react-router-dom", () => ({
-//   ...jest.requireActual("react-router-dom"),
-//   useNavigate: jest.fn(),
-// }));
+
 
 describe("LoginForm", () => {
   it("Envía el formulario y redirige en caso de éxito", async () => {

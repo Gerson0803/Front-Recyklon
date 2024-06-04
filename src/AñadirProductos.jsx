@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { IsNotEmpty, IsOptional, IsEnum, Min } from 'class-validator'; // Importa las validaciones necesarias
+import { IsNotEmpty, IsOptional, IsEnum, Min } from 'class-validator'; 
 import { ProductStatus } from '../entities/product.entity';
 
 const CreateProductForm = () => {
-  // Estados para almacenar los valores del formulario
+
   const [nombreProducto, setNombreProducto] = useState('');
   const [descripcion, setDescripcion] = useState('');
   const [precio, setPrecio] = useState(0);
@@ -14,19 +14,19 @@ const CreateProductForm = () => {
   const [categorias, setCategorias] = useState([]);
 
   useEffect(() => {
-    // Recuperar el ID del vendedor del localStorage
+    
     const storedIdVendedor = localStorage.getItem('vendedorId');
     if (storedIdVendedor) {
       setIdVendedor(storedIdVendedor);
     }
-  }, []); // Se ejecuta solo una vez al cargar el componente
+  }, []); 
 
-  // Función para manejar el envío del formulario
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      // Realiza la solicitud POST al backend para crear un nuevo producto
+    
       const response = await axios.post('http://localhost:3000/products', {
         nombreProducto,
         descripcion,
@@ -37,10 +37,10 @@ const CreateProductForm = () => {
         cantidadDisponible
       });
 
-      // Maneja la respuesta del backend
+    
       console.log('Nuevo producto creado:', response.data);
     } catch (error) {
-      // Maneja errores
+     
       console.error('Error al crear el producto:', error);
     }
   };
@@ -179,8 +179,8 @@ const CreateProductForm = () => {
             type="text"
             id="idVendedor"
             value={idVendedor}
-            readOnly // Campo de solo lectura
-            disabled // Deshabilita la edición
+            readOnly 
+            disabled 
           />
         </div>
         <div className="form-group">

@@ -6,7 +6,7 @@
     height: 7%;
     margin-left:40%;
     margin-bottom: 15px;
-    border: 1px solid #ddd; /* Cambiado a un color más claro */
+    border: 1px solid #ddd; 
     border-radius: 10px;   
 }
 .RecuadroActPD{
@@ -21,10 +21,10 @@
 }
 .SelectOptionPA{
     margin-bottom: 5px;
-    width: 150px; /* Ajusta el valor según tus necesidades */
-    height: 30px; /* Ajusta el valor según tus necesidades */
-    background-color: white; /* Color de fondo de los botones */
-    color: #000000; /* Color del texto de los botones */
+    width: 150px; 
+    height: 30px; 
+    background-color: white; 
+    color: #000000; 
     cursor: pointer;
 }
 .ContentText1{

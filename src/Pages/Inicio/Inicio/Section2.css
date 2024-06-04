@@ -1,93 +1,118 @@
-/* Section2.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #fff; 
+}
 
 .section2-contenido-principal {
-    width: 100%;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .section2-recyklon-text {
-    font-size: 10rem;
-    font-weight: 900;
-    font-family: 'Anton', sans-serif;
-    color: #fff;
-  }
-  
-  .section2-subtitle {
-    font-size: 1.5rem;
-    font-family: 'Poetsen One', sans-serif;
-    color: #fff;
-  }
-  
-  .section2-description {
-    font-size: 1rem;
-    font-family: 'Arial', sans-serif;
-    color: #fff;
-  }
-  
-  .section2-division-container {
-    display: flex;
-    width: 100%;
-    height: 100%;
-  }
-  
-  /* Estilos para el lado izquierdo de Section2 */
-  .section2-left-side {
-    width: 95%;
-    height: 75%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgb(173, 122, 122); /* Fondo rojo */
-  }
-  
-  .section2-one {
-    background-color: rebeccapurple;
-    width: 50%;
-    height: 100%;
-  }
-  
-  .section2-division {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #fff;
-    width: 50%;
-    height: 100%;
-  }
-  
-  .section2-inner-one,
-  .section2-inner-two {
-    flex: 1;
-    background-color: lightgreen;
-    margin: 10px; /* Para dar espacio entre los divs internos */
-  }
-  
-  /* Estilos para el lado derecho de Section2 */
-  .section2-right-side {
-    width: 90%;
-    height: 75%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: blue; /* Fondo azul */
-  }
-  
-  .section2-right-division {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .section2-right-division > div {
-    flex: 1 1 45%; /* Cada div ocupará aproximadamente el 45% del ancho */
-    background-color: lightcoral;
-    margin: 10px;
-    height: 45%; /* Altura ajustada para mantener la proporción */
-  }
-  
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section2-division-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.section2-left-side {
+  width: 95%;
+  height: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section2-one {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; 
+}
+
+.section2-division {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  height: 100%;
+  padding: 10px; 
+}
+
+.section2-inner-one {
+  flex: 1;
+  margin: 10px; 
+  padding: 20px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: black;
+  border-radius: 10px;
+  background-color: #164A41; 
+}
+
+.recyclable-image {
+  width: 100%;
+  height: auto;
+  max-width: 150px; 
+  margin: auto;
+}
+
+.inclined {
+  transform: rotate(-20deg); 
+}
+
+.section2-right-side {
+  width: 90%;
+  height: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #164A41; 
+  border-radius: 20px;
+}
+
+.section2-right-division {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.section2-right-division > div {
+  flex: 1 1 45%; 
+  background-color: #638564;
+  margin: 10px;
+  height: 45%; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.section2-division h2 {
+  font-size: 1.5rem;
+  color: #fff; 
+  margin-bottom: 10px;
+}
+
+.section2-division ul {
+  list-style-type: none;
+  padding: 0;
+  color: #fff;
+}
+
+.section2-division p {
+  font-size: 0.9rem;
+  color: #fff; 
+}

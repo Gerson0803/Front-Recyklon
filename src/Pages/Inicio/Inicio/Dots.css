@@ -1,12 +1,12 @@
 .dots-container {
-  width: 100%; /* Ocupa todo el ancho */
+  width: 100%; 
   display: flex;
   justify-content: center;
-  margin-top: 10px; /* Ajusta según sea necesario */
+  margin-top: 10px; 
 }
 
 .dots-buttons {
-  width: 70%; /* Ocupa el 70% del ancho del contenedor */
+  width: 70%; 
   display: flex;
   justify-content: center;
 }

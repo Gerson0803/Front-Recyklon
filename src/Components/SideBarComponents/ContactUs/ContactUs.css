@@ -1,6 +1,4 @@
-/* ContactUs.css */
 
-/* Contenedor principal */
 .contact-us-container {
     display: flex;
     justify-content: center;
@@ -8,7 +6,7 @@
     height: 100vh;
   }
   
-  /* Contenido */
+
   .contact-us-content {
     width: 60%;
     padding: 40px;
@@ -18,35 +16,35 @@
     text-align: center;
   }
   
-  /* Título */
+  
   .contact-us-title {
     font-size: 36px;
     margin-bottom: 20px;
   }
   
-  /* Descripción */
+ 
   .contact-us-description {
     font-size: 18px;
     margin-bottom: 30px;
   }
   
-  /* Formulario */
+ 
   .contact-us-form {
     display: flex;
     flex-direction: column;
   }
   
-  /* Grupo de formularios */
+
   .form-group {
     margin-bottom: 20px;
   }
   
-  /* Etiqueta del formulario */
+ 
   .form-group label {
     font-size: 18px;
   }
   
-  /* Entrada del formulario */
+
   .form-group input,
   .form-group textarea {
     width: 100%;
@@ -66,7 +64,7 @@
     border-color: #4caf50;
   }
   
-  /* Botón de enviar */
+
   .submit-button {
     padding: 12px 24px;
     background-color: #4caf50;

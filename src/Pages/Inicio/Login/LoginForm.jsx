@@ -21,20 +21,20 @@ const LoginForm = ({ userImage }) => {
             });
 
             if (response.status === 201) {
-                // Guardar la información del usuario en el localStorage
+               
                 localStorage.setItem('userData', JSON.stringify(response.data));
                 console.log("Login successful");
                 console.log(response.data);
 
-                // Redirigir a la página del menú después de un inicio de sesión exitoso
+                
                 navigate('/Menu');
             } else {
-                // Mostrar un mensaje de error al usuario en caso de un inicio de sesión fallido
+                
                 setError(response.data?.message || 'Error al iniciar sesión: respuesta no válida');
                 console.error('Error al iniciar sesión:', response.data?.message || 'respuesta no válida');
             }
         } catch (error) {
-            // Mostrar un mensaje de error al usuario en caso de un error en la solicitud
+            
             setError(error.response?.data?.message || 'Error al iniciar sesión: no se pudo acceder a la respuesta del servidor');
             console.error('Error al iniciar sesión:', error.response?.data || 'no se pudo acceder a la respuesta del servidor');
         }

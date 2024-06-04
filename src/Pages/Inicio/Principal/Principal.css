@@ -1,4 +1,4 @@
-/* Principal.css */
+
 .principal {
   display: flex;
   height: 100vh;
@@ -8,16 +8,16 @@
 .principal-main {
   display: flex;
   flex-direction: column;
-  width: 80%; /* Ocupa el 80% del ancho total, dado que el sidebar ocupa el 20% */
-  margin-left: 20%; /* Desplaza el contenido principal para que no quede debajo del sidebar */
+  width: 80%;
+  margin-left: 20%; 
 }
 
 .principal-content {
   flex-grow: 1;
-  overflow-y: auto; /* Scroll independiente para el contenido principal */
+  overflow-y: auto;
   padding: 20px;
 }
-/* Principal.css */
+
 .principal-container {
-  border: 2px solid black; /* Puedes ajustar el grosor y el color del borde según tus preferencias */
+  border: 2px solid black; 
 }

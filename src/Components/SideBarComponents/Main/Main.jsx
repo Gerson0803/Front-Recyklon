@@ -27,9 +27,9 @@ function Inicio({ userId }) {
     if (productos.length > 0) {
       const interval = setInterval(() => {
         setIndiceProductoActual((prevIndice) => (prevIndice + 1) % productos.length);
-      }, 5000); // Cambia de producto cada 5 segundos
+      }, 5000); 
 
-      return () => clearInterval(interval); // Limpia el intervalo al desmontar el componente
+      return () => clearInterval(interval); 
     }
   }, [productos.length]);
 

@@ -8,8 +8,8 @@ function Profile() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem('userData'); // Elimina los datos del usuario del localStorage
-    navigate('/'); // Redirige a la página de inicio o a la página de login
+    localStorage.removeItem('userData'); 
+    navigate('/'); 
   };
 
   return (
