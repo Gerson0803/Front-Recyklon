@@ -1,16 +1,23 @@
-
 .ShoppingCart-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f9f9f9;
+  align-items: flex-start; /* Cambiado de center a flex-start */
+ 
+  background-color: #fff;
 }
 
 .ShoppingCart-content {
   width: 80%;
-  margin: 0 auto;
-  padding: 20px;
+  margin-top: 80px ; /* Reducido para estar más cerca de la parte superior */
+  height: 100%;
+  
+}
+
+.ShoppingCart-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .ShoppingTable-container {
@@ -23,6 +30,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   overflow: hidden;
+  margin-top: 30px;
 }
 
 .ShoppingTable th,

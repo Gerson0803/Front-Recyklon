@@ -1,17 +1,17 @@
-import react, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import "./CrearProductos.css"
+import "./CrearProductos.css";
 
 const imagenesPorCategoria = {
   'Artículos de decoración y manualidades': 'https://d2z8zvwx6itreb.cloudfront.net/fomentando-el-reciclaje-en-los-ninos-a-traves-del-arte-y-las-manualidades-large-R22zbK53PO.jpg',
   'Artículos para el hogar': 'https://educowebmedia.blob.core.windows.net/educowebmedia/educospain/media/images/blog/reciclaje-macetas.jpg',
   'Muebles y accesorios': 'https://connectionsbyfinsa.com/wp-content/uploads/2018/03/ConnectionsbyFinsa-muebles-reciclaje-woojai-papel.jpg',
   'Juguetes y juegos': 'https://sentinelcat.com/wp-content/uploads/2023/03/juguetes-reciclados-originales.jpg',
-  'Accesorios de moda': 'https://i.pinimg.com/736x/7c/d2/d9/7cd2d92fca7bdfb6f1ea9a75254b6929.jpg ',
+  'Accesorios de moda': 'https://i.pinimg.com/736x/7c/d2/d9/7cd2d92fca7bdfb6f1ea9a75254b6929.jpg',
 };
 
 const FormularioProducto = ({ userId }) => {
-  const [productoData, setProductoData] = useState({
+  const initialProductData = {
     nombreProducto: '',
     descripcion: '',
     precio: 0,
@@ -19,7 +19,9 @@ const FormularioProducto = ({ userId }) => {
     idVendedor: userId,
     cantidadDisponible: 0,
     imagen: ''
-  });
+  };
+
+  const [productoData, setProductoData] = useState(initialProductData);
   const [categorias, setCategorias] = useState([]);
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('');
 
@@ -50,18 +52,18 @@ const FormularioProducto = ({ userId }) => {
       const cantidadDisponible = parseInt(productoData.cantidadDisponible);
 
       const datosAEnviar = {
-        nombreProducto: productoData.nombreProducto,
-        descripcion: productoData.descripcion,
+        ...productoData,
         precio: precio,
-        categoria: categoriaSeleccionada,
-        estado: productoData.estado,
-        idVendedor: productoData.idVendedor,
         cantidadDisponible: cantidadDisponible,
-        imagen: productoData.imagen
+        categoria: categoriaSeleccionada,
       };
 
       const response = await axios.post('http://localhost:3000/products', datosAEnviar);
       console.log('Producto creado:', response.data);
+
+      // Reset the form fields after successful submission
+      setProductoData(initialProductData);
+      setCategoriaSeleccionada('');
     } catch (error) {
       console.error('Error al crear el producto:', error);
     }

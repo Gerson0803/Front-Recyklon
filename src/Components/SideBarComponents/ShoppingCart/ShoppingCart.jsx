@@ -48,7 +48,7 @@ const ShoppingCart = ({ userId }) => {
   return (
     <div className="ShoppingCart-container">
       <div className="ShoppingCart-content">
-        <h2>Mis productos</h2>
+        <h2 className="ShoppingCart-title">Mis productos</h2>
         <div className="ShoppingTable-container">
           <table className="ShoppingTable">
             <thead>
