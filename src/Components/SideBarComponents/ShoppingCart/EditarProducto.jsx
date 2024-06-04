@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import "./EditarProducto.css";
+import './EditarProducto.css';
 
 const imagenesPorCategoria = {
   'Artículos de decoración y manualidades': 'https://via.placeholder.com/150',
@@ -96,103 +96,117 @@ const EditarProducto = ({ userId, productId, onClose }) => {
   return (
     <div className='ContentP01'>
       <div className='ContentText1'>
-        <h2 className="Tittle1">Actualizar Producto</h2>
-      </div>
-      
-      <div className="SelectOption1">
-        <button className='SelectOptionPA' onClick={() => handleOpcionSeleccionada('nombreProducto')}>Nombre del Producto</button>
-        <button className='SelectOptionPA' onClick={() => handleOpcionSeleccionada('descripcion')}>Descripción</button>
-        <button className='SelectOptionPA' onClick={() => handleOpcionSeleccionada('precio')}>Precio</button>
-        <button className='SelectOptionPA' onClick={() => handleOpcionSeleccionada('estado')}>Estado</button>
-        <button className='SelectOptionPA' onClick={() => handleOpcionSeleccionada('cantidadDisponible')}>Cantidad Disponible</button>
-        <button className='SelectOptionPA' onClick={() => handleOpcionSeleccionada('categoria')}>Categoría</button>
+        <h2 className='Tittle1'>Actualizar Producto</h2>
       </div>
 
-      {opcionSeleccionada === 'nombreProducto' && (
-        <div className='CenterInput'>
-          <div className='LabelC'> <label>Nombre del Producto:</label></div>
-          
-          <input
-            className="RecuadroActP"
-            type="text"
-            name="nombreProducto"
-            value={productoData.nombreProducto}
-            onChange={handleChange}
-          />
-        </div>
-      )}
-      {opcionSeleccionada === 'descripcion' && (
-        <div className='CenterInput'>
-          <label>Descripción:</label>
-          <textarea
-            className="RecuadroActPD"
-            name="descripcion"
-            value={productoData.descripcion}
-            onChange={handleChange}
-          />
-        </div>
-      )}
-      {opcionSeleccionada === 'precio' && (
-        <div className='CenterInput'>
-          <div className='LabelC'> <label>Precio:</label></div>
-          <input
-            className="RecuadroActP"
-            type="number"
-            name="precio"
-            value={productoData.precio}
-            onChange={handleChange}
-          />
-        </div>
-      )}
-      {opcionSeleccionada === 'estado' && (
-        <div className='CenterInput'>
-          <div className='LabelC'><label>Estado:</label></div>
-          
-          <select
-            className="RecuadroActP"
-            name="estado"
-            value={productoData.estado}
-            onChange={handleChange}
-          >
-            <option value="disponible">Disponible</option>
-            <option value="vendido">Vendido</option>
-            <option value="reservado">Reservado</option>
-          </select>
-        </div>
-      )}
-      {opcionSeleccionada === 'cantidadDisponible' && (
-        <div className='CenterInput'>
-          <div className='LabelC'><label >Cantidad Disponible:</label></div>
-          <input
-            className="RecuadroActP"
-            type="number"
-            name="cantidadDisponible"
-            value={productoData.cantidadDisponible}
-            onChange={handleChange}
-          />
-        </div>
-      )}
-      {opcionSeleccionada === 'categoria' && (
-        <div>
-          <label>Categoría:</label>
-          {categorias.map((categoria, index) => (
-            <div key={index}>
-              <input
-                className='CategoryCss'
-                type="radio"
-                id={`${categoria}-${index}`}
-                name="categoria"
-                value={categoria}
-                checked={categoria === categoriaSeleccionada}
-                onChange={handleCategoriaChange}
-              />
-              <label htmlFor={`${categoria}-${index}`}>{categoria}</label>
+      <div className='SelectOption1'>
+        <button className='SelectOptionPA' onClick={() => handleOpcionSeleccionada('nombreProducto')}>
+          Nombre del Producto
+        </button>
+        <button className='SelectOptionPA' onClick={() => handleOpcionSeleccionada('descripcion')}>
+          Descripción
+        </button>
+        <button className='SelectOptionPA' onClick={() => handleOpcionSeleccionada('precio')}>
+          Precio
+        </button>
+        <button className='SelectOptionPA' onClick={() => handleOpcionSeleccionada('estado')}>
+          Estado
+        </button>
+        <button className='SelectOptionPA' onClick={() => handleOpcionSeleccionada('cantidadDisponible')}>
+          Cantidad Disponible
+        </button>
+        <button className='SelectOptionPA' onClick={() => handleOpcionSeleccionada('categoria')}>
+          Categoría
+        </button>
+      </div>
+
+      <div className='CenterInput'>
+        {opcionSeleccionada === 'nombreProducto' && (
+          <div>
+            <label>Nombre del Producto:</label>
+            <input
+              className='RecuadroActP'
+              type='text'
+              name='nombreProducto'
+              value={productoData.nombreProducto}
+              onChange={handleChange}
+            />
+          </div>
+        )}
+
+        {opcionSeleccionada === 'descripcion' && (
+          <div>
+            <label>Descripción:</label>
+            <textarea
+              className='RecuadroActPD'
+              name='descripcion'
+              value={productoData.descripcion}
+              onChange={handleChange}
+            />
+          </div>
+        )}
+
+        {opcionSeleccionada === 'precio' && (
+          <div>
+            <label>Precio:</label>
+            <input
+              className='RecuadroActP'
+              type='number'
+              name='precio'
+              value={productoData.precio}
+              onChange={handleChange}
+            />
+          </div>
+        )}
+
+        {opcionSeleccionada === 'estado' && (
+          <div>
+            <label>Estado:</label>
+            <select className='RecuadroActP' name='estado' value={productoData.estado} onChange={handleChange}>
+              <option value='disponible'>Disponible</option>
+              <option value='vendido'>Vendido</option>
+              <option value='reservado'>Reservado</option>
+            </select>
+          </div>
+        )}
+
+        {opcionSeleccionada === 'cantidadDisponible' && (
+          <div>
+            <label>Cantidad Disponible:</label>
+            <input
+              className='RecuadroActP'
+              type='number'
+              name='cantidadDisponible'
+              value={productoData.cantidadDisponible}
+              onChange={handleChange}
+            />
+          </div>
+        )}
+
+        {opcionSeleccionada === 'categoria' && (
+          <div>
+            <label>Categoría:</label>
+            <div className='category'>
+              {categorias.map((categoria, index) => (
+                <div key={index}>
+                  <input
+                    type='radio'
+                    id={`${categoria}-${index}`}
+                    name='categoria'
+                    value={categoria}
+                    checked={categoria === categoriaSeleccionada}
+                    onChange={handleCategoriaChange}
+                  />
+                  <label htmlFor={`${categoria}-${index}`}>{categoria}</label>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      )}
-      <div className="ButtonAct1">
-        <button className="ButtonAct" type="submit" onClick={handleSubmit}>
+          </div>
+        )}
+      </div>
+
+      <div className='ButtonAct1'>
+        <button className='ButtonAct' type='submit' onClick={handleSubmit}>
           Actualizar
         </button>
       </div>

@@ -1,96 +1,109 @@
-
-.RecuadroActP{
-    position:absolute;
+.ContentP01 {
     display: flex;
-    width: 45%;
-    height: 7%;
-    margin-left:40%;
-    margin-bottom: 15px;
-    border: 1px solid #ddd; /* Cambiado a un color más claro */
-    border-radius: 10px;   
-}
-.RecuadroActPD{
-    position:absolute;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .ContentText1 {
     display: flex;
-    width: 60%;
-    height: 20%;
-    margin-left:25%;
-    margin-right: 0%;
-    margin-bottom: 15px;
-       
-}
-.SelectOptionPA{
-    margin-bottom: 5px;
-    width: 150px; /* Ajusta el valor según tus necesidades */
-    height: 30px; /* Ajusta el valor según tus necesidades */
-    background-color: white; /* Color de fondo de los botones */
-    color: #000000; /* Color del texto de los botones */
-    cursor: pointer;
-}
-.ContentText1{
-    display: flex;
-
     justify-content: center;
     align-items: center;
- 
     margin-top: 0px;
-    
-}
-
-.Tittle1{
-    text-align: center; 
+    margin-bottom: 10px;
+  }
+  
+  .Tittle1 {
+    text-align: center;
     margin-top: 0%;
-    margin-bottom: 20px; 
-}
-.SelectOption1{
-    
+    margin-bottom: 0px;
+  }
+  
+  .SelectOption1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    
-}
-.ContentP01{
- 
-}
-   
-.ButtonAct1{
-    position:absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  }
+  
+  .SelectOptionPA {
+    margin-top: 10px;
+  }
+  
+  .CenterInput {
     display: flex;
-    justify-content: center;
-    margin-bottom: 5%;
-   
- 
-    
-}
-
-.ButtonAct{
-
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    border-radius: 0.25rem;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.CenterInput{
-    display: flex;
-    margin-top: 10%;
-    margin-left: 8%;
+    flex-direction: column;
+    margin-top: 5%;
     width: 100%;
-   
-    
-}
-.LabelC{
-    margin-top:2%;
-    
-}
-.CategoryCss{
-    cursor: pointer;
-}
+  }
+  .category {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  
+
+  
+  .CenterInput > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  
+  .CenterInput label {
+    flex: 0 0 150px;
+    text-align: left;
+    margin-right: 10px;
+    white-space: nowrap;
+  }
+  .RecuadroActP,
+  .RecuadroActPD {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 50%; /* Ancho al 50% */
+    padding: 10px; /* Añadir relleno para una mejor apariencia */
+  }
+  
+  .ButtonAct1 {
+    position: absolute;
+
+    margin-top: 120%;
+    margin-bottom: 20px;
+
+  }
+  /* Media queries para responsividad */
+  @media (max-width: 768px) {
+    .ContentP01 {
+      padding: 10px;
+    }
+  
+    .SelectOptionPA {
+      width: 120px;
+    }
+  
+    .RecuadroActP,
+    .RecuadroActPD {
+      width: 100%; /* Ajustar el ancho para pantallas más pequeñas */
+    }
+  
+    .CenterInput > div {
+      flex-direction: column; /* Apilar etiqueta e input verticalmente */
+      align-items: flex-start;
+    }
+  
+    .CenterInput label {
+      margin-bottom: 5px; /* Añadir margen para el espaciado */
+    }
+  
+    .ButtonAct1 {
+      position: relative;
+      margin-top: 20px;
+    }
+  }
+  
+  .ola {
+    max-width: 100px;
+  }
+  
