@@ -1,42 +1,11 @@
 .ContentP01 {
     display: flex;
-<<<<<<< HEAD
     flex-direction: column;
     align-items: center;
   }
   
   .ContentText1 {
     display: flex;
-=======
-    width: 45%;
-    height: 7%;
-    margin-left:40%;
-    margin-bottom: 15px;
-    border: 1px solid #ddd; 
-    border-radius: 10px;   
-}
-.RecuadroActPD{
-    position:absolute;
-    display: flex;
-    width: 60%;
-    height: 20%;
-    margin-left:25%;
-    margin-right: 0%;
-    margin-bottom: 15px;
-       
-}
-.SelectOptionPA{
-    margin-bottom: 5px;
-    width: 150px; 
-    height: 30px; 
-    background-color: white; 
-    color: #000000; 
-    cursor: pointer;
-}
-.ContentText1{
-    display: flex;
-
->>>>>>> 56ea213a169bb9dc16eb29fd540c6164a7880a1e
     justify-content: center;
     align-items: center;
     margin-top: 0px;
